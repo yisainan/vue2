@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red { color:red}
+        .blue { background-color: blue}
+    </style>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：-->
+<div id="app">
+    <span :class='json'>123123</span>
+</div>
+</body>
+<script>
+    window.onload = function(){
+      var vm = new Vue({
+          el:'#app',
+          data:{
+             json:{
+                 red:false,
+                 blue:true
+             }
+          }
+      })
+    }
+</script>
+</html>

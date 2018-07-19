@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    </style>
+    <script src='vue.js'></script>
+    <script src='vue-resource.js'></script>
+</head>
+<!--总结：亲测，如果1.txt改为其他不存在的文件名称就会提示‘错误’-->
+<body>
+    <div id="app">
+        <input type="button" @click='get' value="点击"/>
+    </div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                get() {
+                   this.$http.get('1.php',{a:1,b:2}).then(function(res){
+                       console.log(res);
+                       console.log(res.data);
+                       console.log(res.status);
+                   },function(res){
+                        alert('错误')
+                   })
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

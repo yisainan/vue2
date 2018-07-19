@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul v-show="isShow">
+      <li v-for="(item, index) in names">{{item}} -- {{index}}</li>
+    </ul>
+
+    <button v-bind:disabled="isDisabled" v-on:click="btnClick">按钮</button>
+    
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        names: ['西施', '貂蝉', '美丽', '凤姐'],
+        isShow: true,
+        isDisabled: false
+
+      },
+      methods: {
+        btnClick: function() {
+          //this  当前vue的示例
+          //点击按钮，控制ul显示隐藏
+          //this.isShow = !this.isShow;
+
+          //点击按钮给列表增加一项数据
+          this.names.push('贵妃');
+
+          //禁用按钮
+          this.isDisabled = true;
+        }
+      }
+    });
+
+
+  </script>
+</body>
+</html>

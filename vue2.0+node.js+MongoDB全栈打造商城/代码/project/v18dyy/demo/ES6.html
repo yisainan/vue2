@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6Demo演示</title>
+  <style>
+    .log{
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>ES6Demo演示</h2>
+  <div id="log" class="log"></div>
+  <script>
+
+    var str = `
+    console.log("a"+a);
+    var a = 1;
+    console.log("b"+b);
+    let b = 2;
+    function user(){
+      var a = 1;
+    }
+
+    console.log("a"+a);
+
+    var a = 1;
+
+    //块级作用域
+    {
+      let a = 1;
+      var b = 2;
+    }
+
+    console.log("b:"+b);
+    console.log("a:"+a);//error
+
+    let a = 1;
+
+    a = 2;
+
+    const b = {a:1};
+
+    b.a = 2;
+    b.c = 10;
+
+    b = {c:1}//error
+
+    function add(flag){
+      if(flag){
+        return "true";
+      }else{
+        return "error";
+      }
+    }
+
+    let userName = "Jack";
+
+
+    console.log(add());
+
+    function sum(num1,num2=3){
+      return num1+num2;
+    }
+
+    console.log(sum(7));
+
+    var arr = [3,6,9];
+
+    var newArr = arr.map(function (item) {
+      return item+2;
+    })
+
+    var newArr1 = arr.map((item)=>item+2);
+
+    console.log(newArr1);
+
+    `;
+    printLog(str);
+
+    //数组的解构
+    var [a,b] = [3,8,10];//数组的分解
+
+    var [x,y,z] = "Vue";//字符串的分解
+
+    console.log(`x:${x},y:${y},z:${z}`);
+
+    var {n,m} = {m:10,n:20};//对象的解构,对key进行拆分
+
+    console.log(`m:${m},n:${n}`);
+
+
+    function sum([x,y]){
+      return x+y;
+    }
+
+    var total = sum([2,8]);
+
+    console.log(`total:${total}`);
+
+    function printLog(str){
+      document.getElementById("log").innerText = str;
+    }
+  </script>
+</body>
+</html>

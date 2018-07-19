@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-resource.js"></script>
+    <script>
+        //总结：vue本身是不支持交互的
+        //  需要引入vue-resource.js
+        //
+        window.onload=function(){
+            new Vue({
+                el:'body',
+                data:{
+
+                },
+                methods:{
+                    get:function(){
+                        //获取a.txt里的数据 成功不会执行最下面的function
+                        this.$http.get('a.txt').then(function(res){
+                            alert(res.status);
+                            alert(res.data);
+                        },function(res){
+                            alert(res.data);
+                        });
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" @click="get()">
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

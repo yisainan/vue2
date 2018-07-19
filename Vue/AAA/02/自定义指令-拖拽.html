@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        Vue.directive('drag',function(){
+            var oDiv=this.el;
+            oDiv.onmousedown=function(ev){
+                var disX=ev.clientX-oDiv.offsetLeft;
+                var disY=ev.clientY-oDiv.offsetTop;
+
+                document.onmousemove=function(ev){
+                    var l=ev.clientX-disX;
+                    var t=ev.clientY-disY;
+                    oDiv.style.left=l+'px';
+                    oDiv.style.top=t+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+            };
+        });
+
+        window.onload=function(){
+            var vm=new Vue({
+                el:'#box',
+                data:{
+                    msg:'welcome'
+                }
+            });
+        };
+
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div v-drag :style="{width:'100px', height:'100px', background:'blue', position:'absolute', right:0, top:0}"></div>
+        <div v-drag :style="{width:'100px', height:'100px', background:'red', position:'absolute', left:0, top:0}"></div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

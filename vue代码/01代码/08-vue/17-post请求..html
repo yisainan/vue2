@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+  <script src="vue-resource.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="btnPost">发表评论</button>
+
+   
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      methods: {
+        btnPost() {
+          var url = 'http://127.0.0.1:8899/api/postcomment/43';
+
+          //发送post请求，必须设置  {emulateJSON: true}
+          // 设置请求头中的content-type   
+          this.$http.post(url, {content: 'xxxxx'}, {emulateJSON: true})
+          .then(function(response) {
+            console.log(response.body)
+          }, function() {
+            console.log('发送数据失败')
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

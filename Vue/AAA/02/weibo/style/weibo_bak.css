@@ -1,0 +1,150 @@
+@charset "utf-8";
+/*
+智能社:微博ajax接口测试 
+日期：2013年3月29日
+*/
+/*页面清零*/
+body,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;}
+body{font-size:12px; font-family:"Microsoft YaHei";}
+ul,ol{list-style-type:none;}
+select,input,img,select{vertical-align:middle;}
+a{text-decoration:underline; color:#313030;}
+a {blr:expression(this.onFocus=this.blur())}
+input,textarea{outline:none; resize:none;}
+a {outline:none;}
+/*头部*/
+.znsArea{width:755px;overflow:hidden; margin:0 auto; font-family:"Microsoft YaHei";}
+/*评论*/
+.commentOn{
+	width:753px;
+	display:block;
+	overflow:hidden;
+	border:#A5BCFF solid 1px;
+	background:#F3F8FD;
+	margin-top:25px;
+	font-family:Verdana;
+}
+.reply{
+	overflow:hidden;
+	padding:10px 20px;
+	background:#FFF;
+	border-top:#E9E9E9 solid 1px;
+	border-bottom:#E9E9E9 solid 1px;
+}
+.userInfo{
+	display:block;
+	overflow:hidden;
+	height:25px;
+	border-bottom:#BABABA solid 1px;
+}
+.userName{
+	float:left;
+	background:url(../img/userBj.png) left center no-repeat;
+	padding-left:15px;
+	color:#000;
+	font-size:14px;
+	font-weight:bold;
+}
+.replyTime{
+	float:left;
+	color:#8B8585;
+	line-height:30px;
+	font-size:11px;
+}
+.replyContent{
+	line-height:24px;
+	font-size:14px;
+	color:#2b2b2b;
+	font-family:"Microsoft YaHei";
+}
+.operation{
+	clear:both;
+	width:100%;
+	height:30px;
+	margin-top:8px;
+}
+.handle{float:right; padding-top:6px;}
+.handle a{text-decoration:none; float:left; margin-left:12px; background:url(../img/icons.png) 0 0 no-repeat;height:18px; line-height:18px; padding-left:20px;}
+.handle .top_icon{background-position:0 0;}
+.handle .down_icon{background-position:0 -17px;}
+.handle .cut{background-position:0 -33px;}
+.handle a:active{color:#09F;}
+
+.noContent{
+	text-align:center;
+	display:block;
+	background:#FFF;
+	font:14px/2.3 "Microsoft YaHei";
+	border-bottom:#E9E9E9 solid 1px;
+	border-top:#E9E9E9 solid 1px;
+	color:#999;
+}
+
+/*我要评论*/
+.takeComment{
+	width:713px;
+	display:block;
+	overflow:hidden;
+	border:#A5BCFF solid 1px;
+	background:#F3F8FD;
+	margin-top:25px;
+	font-family:Verdana;
+	padding:15px 20px;
+}
+/*文本输入域*/
+.takeTextField{
+	width:701px;
+	height:70px;
+	border:#b1b1b1 solid 1px;
+	clear:both;
+	display:block;
+	margin:10px 0 10px 0;
+	line-height:20px;
+	padding:5px;
+	box-shadow:inset 0 0 5px #DDD;
+	font-family:"Microsoft YaHei";
+}
+.takeSbmComment{
+	display:block;
+	overflow:hidden;
+}
+.takeSbmComment span{
+	float:right;
+	color:#CCC; line-height:37px;
+	padding-right:10px;
+}
+.inputs{
+	float:right;
+	width:125px;
+	height:37px;
+	border:none 0;
+	background:tranparent;
+	background:url(../img/takeSbmComment.png) left top no-repeat;
+	cursor:pointer;
+	opacity:.8;
+}
+.inputs:hover{opacity:1;}
+.inputs:active{opacity:.9;}
+.messList{overflow:hidden;}
+.page{text-align:right; font-size:0; font-family:Verdana; padding:10px 16px;}
+.page a{display:inline-block; height:20px; padding:0 7px; border:#CCC solid 1px; font:12px/20px Verdana; text-decoration:none; margin-left:5px; background:#FFF;}
+.page a:hover{background:#09F; color:#FFF; border-color:#09F;}
+.page .active{background:#CCC;}
+.page a:active{opacity:.8;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

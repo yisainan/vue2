@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        p{
+            width:100px;
+            height:100px;
+            background: red;
+            margin:10px auto;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="animate.css">
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+                    show:'',
+                    list:['apple','banana','orange','pear']
+                },
+                computed:{
+                    lists:function(){
+                        var arr=[];
+                        this.list.forEach(function(val){
+                            if(val.indexOf(this.show)!=-1){
+                                arr.push(val);
+                            }
+                        }.bind(this));
+                        return arr;
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="show">
+
+        <transition-group enter-active-class="zoomInLeft" leave-active-class="zoomOutRight">
+            <p v-show="show" class="animated" v-for="(val,index) in lists" :key="index">
+                {{val}}
+            </p>
+        </transition-group>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

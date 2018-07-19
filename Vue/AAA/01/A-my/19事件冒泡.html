@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--总结：使用:style的时候，对象中使用，分割；
+          属性值都是字符串形式的！！
+          一共三种方式！！！
+   -->
+<div id="app">
+    <div :style="{width:'400px',height:'400px',background:'#ccc'}" @click="one">
+        <div :style="{width:'200px',height:'200px',background:'red'}" @click.stop="two"></div> <!--.stop-->
+    </div>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                one(){
+                     alert('one');
+                },
+                two(){
+                     alert('two');
+                //   e.stopPropagation();       // 方式1
+                //   e.cancelBubble = true;     // 方式2
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

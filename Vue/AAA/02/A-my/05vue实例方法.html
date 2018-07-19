@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：这里主要是$options的使用-->
+<div id="app">{{a}}</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            aa:11,
+            show(){
+               alert(1);
+            },
+            data:{
+              c:32
+            }
+        }).$mount('#app');
+
+        vm.$options.show();
+
+        alert(vm.$options.aa);
+
+        alert(vm.$options.data);
+
+        console.log(vm.$log());
+    }
+</script>
+</body>
+</html>

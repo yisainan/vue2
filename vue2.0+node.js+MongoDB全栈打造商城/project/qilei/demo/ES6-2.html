@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6-2Demo演示</title>
+</head>
+<body>
+<h2>
+  ES6-2Demo演示
+</h2>
+<script>
+  function sum(x,y,z){
+    let total = 0;
+    if(x)total+=x;
+    if(y)total+=y;
+    if(z)total+=z;
+
+    console.log(`total:${total}`)
+  }
+
+  sum(5,"",9)
+
+  function sum2(...m){
+    let total = 0;
+    for(var i of m){
+      total += i;
+    }
+    console.log(`total:${total}`)
+  }
+
+  sum2(4,8,9,10);
+
+  let sum3 = (...m)=>{
+    let total = 0;
+    for(var i of m){
+      total += i;
+    }
+    console.log(`total:${total}`)
+  };
+
+  sum3(4,8,9,10);
+
+  var [x,y] = [4,8]
+
+  console.log(...[4,8]);
+
+  let arr1 = [1,3];let arr2 = [4,8];
+  console.log("concat:"+arr1.concat(arr2));
+
+//  [...arr1,...arr2]
+
+//  var [x,y] = [4,8];
+
+  var [x,...y] = [4,8,10,30]
+
+  let [a,b,c] = "ES6";
+
+  let xy = [...'ES6'];
+
+
+</script>
+</body>
+</html>

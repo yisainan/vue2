@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<aaa>
+		</aaa>
+	</div>
+
+	<template id="aaa">
+		<h1>11111-->{{msg2}}</h1>
+		<!--这里的msg2与父组件中msg2一定保持一致
+		bbb上的msg2可以拿到父组件的值，给他绑定一个属性，随意比如mmm，但是下面要保持一致-->
+		<bbb :mmm="msg2"></bbb>
+	</template>
+	<script>
+		/* props 可以使子组件获取父组件的值*/
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				a:'aaa'
+			},
+			components:{
+				'aaa':{
+					data(){
+						return {
+							msg2:'我是父组件的数据'
+						}
+					},
+					template:'#aaa',
+					components:{
+						'bbb':{
+        //两种写法   默认用下面的
+		//		            props:{'mmm':String},
+							props:['mmm'],
+							template:'<h3>我是bbb组件->{{mmm}}</h3>'
+						}
+					}
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        p{
+            width:300px;
+            height:300px;
+            background: red;
+        }
+        .fade-enter-active, .fade-leave-active{
+            transition: 1s all ease;
+        }
+
+        .fade-enter-active{
+            opacity:1;
+            width:300px;
+            height:300px;
+        }
+        .fade-leave-active{
+            opacity:0;
+            width:100px;
+            height:100px;
+        }
+
+        .fade-enter,.fade-leave{
+            opacity:0;
+            width:100px;
+            height:100px;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+                    show:false
+                },
+                methods:{
+                    beforeEnter(el){
+                        console.log('动画enter之前');
+                    },
+                    enter(el){
+                        console.log('动画enter进入');
+                    },
+                    afterEnter(el){
+                        console.log('动画进入之后');
+                        el.style.background='blue';
+                    },
+                    beforeLeave(el){
+                        console.log('动画leave之前');
+                    },
+                    leave(el){
+                        console.log('动画leave');
+                    },
+                    afterLeave(el){
+                        console.log('动画leave之后');
+                        el.style.background='red';
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="点击显示隐藏" @click="show=!show">
+
+        <transition name="fade"
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @after-enter="afterEnter"
+
+            @before-leave="beforeLeave"
+            @leave="leave"
+            @after-leave="afterLeave"
+        >
+            <p v-show="show"></p>
+        </transition>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

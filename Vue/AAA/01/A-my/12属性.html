@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：这里进行的属性绑定  就是v-bind 的缩写
+
+      -->
+<div id="app">
+    <a :href="url">123</a>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+               url:'http://www.baidu.com'
+            }
+        })
+    }
+</script>
+</body>
+</html>

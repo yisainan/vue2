@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：v-text和{{}}出来的效果是相同的-->
+<div id="app">
+    <div>{{msg}}</div>
+    <!--<div>{{{msg}}}</div>-->
+    <div v-text='msg'></div>
+    <div v-html='msg'></div>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'<i>哈哈123</i>'
+            }
+        })
+    }
+</script>
+</body>
+</html>

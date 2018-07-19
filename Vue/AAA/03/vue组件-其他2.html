@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<aaa></aaa>
+	</div>
+
+	<script>
+		var Aaa=Vue.extend({
+			data(){
+			/*这里必须返回对象 return{}*/
+				return {
+					msg:'我是标题^^'
+				};
+			},
+			template:'<h3>{{msg}}</h3>'
+		});
+
+		Vue.component('aaa',Aaa);
+
+
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				bSign:true
+			}
+		});
+
+	</script>
+</body>
+</html>

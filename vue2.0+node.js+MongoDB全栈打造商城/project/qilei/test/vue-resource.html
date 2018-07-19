@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-resource插件案列</title>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script src="../node_modules/vue-resource/dist/vue-resource.js"></script>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div id="app" class="container">
+    <h2>Vue-resource插件的使用</h2>
+    <a href="javascript:;" class="btn btn-primary" @click="get">Get</a>
+    <a href="javascript:;" class="btn btn-primary" @click="post">Post</a>
+    <a href="javascript:;" class="btn btn-primary" @click="http">Http</a>
+    <a href="javascript:;" class="btn btn-primary" @click="jsonp">Jsonp</a>
+    <div>{{msg}}</div>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        msg:''
+      },
+      mounted: function () {
+        Vue.http.interceptors.push(function (request,next) {
+          console.log("interceptors init.");
+          next(function (response) {
+            console.log("interceptors next.");
+          });
+        });
+      },
+      http: {
+        root: 'http://localhost:63342/ImoocMall',
+        headers: {
+          author:"jackbean",
+          Authorization: 'Basic YXBpOnBhc3N3b3Jk'
+        }
+      },
+      methods:{
+        get: function () {
+          this.$http.get("package1.json",{
+            params:{
+              userId:"123"
+            },
+            headers:{
+              access_token:"abcd"
+            },
+            before: function () {
+              console.log("before init.");
+            }
+          }).then(function (res) {
+            this.msg = res.data;
+          }, function (error) {
+            console.log("error"+error)
+          }).catch(function (error) {
+            console.log("catch eroro"+error)
+          });
+        },
+        post: function () {
+          this.$http.post("../package.json",{
+            userId:"123"
+          },{
+            headers:{
+              access_token:"abcd"
+            },
+            before: function () {
+              console.log("before init.");
+            }
+          }).then(function (res) {
+            this.msg = res.data;
+          });
+        },
+        http: function () {
+          this.$http({
+            url:"package.json",
+            method:"POST",
+            params:{
+              userId:"000"
+            },
+            headers:{
+              token:"101"
+            }
+          }).then(function (res) {
+            this.msg = res.data;
+          })
+        },
+        jsonp: function () {
+          this.$http.jsonp("http://www.imooc.com/course/ajaxskillcourse?cid=796",{
+            params:{
+              userId:1001
+            },
+            uId:"jack"
+          }).then(function (res) {
+            this.msg = res.data;
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

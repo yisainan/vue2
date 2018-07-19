@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--总结：方法调用的时候，（）里必须是$event !!!  调用时的顺序与方法中的参数顺序相同-->
+<div id="app">
+   <div :style="{width:'200px',height:'200px',background:'#ccc'}" @click='show($event,12)'>
+   </div>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                show(e,num){
+                   alert(e.clientX);
+                   alert(num);
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

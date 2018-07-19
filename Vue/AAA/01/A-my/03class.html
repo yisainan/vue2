@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red { color:red}
+        .blue { background-color: blue}
+    </style>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：-->
+<div id="app">
+    <span :class='{red:r,blue:b}'>123123</span>
+</div>
+</body>
+<script>
+    window.onload = function(){
+      var vm = new Vue({
+          el:'#app',
+          data:{
+              r:true,
+              b:false
+          }
+      })
+    }
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+  <script src="vue-resource.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="btnJsonp">按钮</button>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      methods: {
+        btnJsonp() {
+
+          var url = 'http://127.0.0.1:1234/getdata';
+          this.$http.jsonp(url)
+          .then(function(response) {
+            console.log(response.body);
+          }, function() {
+            console.log('请求出错')
+          })
+        }
+      }
+    })
+
+  </script>
+</body>
+</html>

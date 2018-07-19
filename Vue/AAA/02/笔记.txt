@@ -1,0 +1,201 @@
+vue制作weibo
+	交互
+
+vue->  1.0
+	vue-resource	ajax	php
+	服务器环境(node)
+
+	this.$http.get()/post()/jsonp()
+
+	this.$http({
+		url:地址
+		data:给后台提交数据,
+		method:'get'/post/jsonp
+		jsonp:'cb' //cbName
+	});
+----------------------------------
+vue事件:
+	@click=""
+数据:
+
+
+添加一条留言：
+
+获取某一页数据:
+	getPageData(1);
+----------------------------------
+vue生命周期:
+	钩子函数:
+
+	created	->   实例已经创建	√
+	beforeCompile	->   编译之前
+	compiled	->   编译之后
+	ready		->   插入到文档中	√
+
+	beforeDestroy	->   销毁之前
+	destroyed	->   销毁之后
+----------------------------------
+用户会看到花括号标记:
+	
+	v-cloak		防止闪烁, 比较大段落
+----------------------------------
+<span>{{msg}}</span>		->   v-text
+{{{msg}}}			->   v-html
+----------------------------------
+ng:  $scope.$watch
+
+计算属性的使用:
+	computed:{
+		b:function(){	//默认调用get
+			return 值
+		}
+	}
+	--------------------------
+	computed:{
+		b:{
+			get:
+			set:
+		}
+	}
+
+	* computed里面可以放置一些业务逻辑代码，一定记得return
+---------------------------------
+vue实例简单方法:
+	vm.$el	->  就是元素
+	vm.$data  ->  就是data
+	vm.$mount ->  手动挂在vue程序
+	
+	vm.$options	->   获取自定义属性
+	vm.$destroy	->   销毁对象
+
+	vm.$log();	->  查看现在数据的状态
+---------------------------------
+循环：
+	v-for="value in data"
+
+	会有重复数据？
+	track-by='索引'	提高循环性能
+
+	track-by='$index/uid'
+---------------------------------
+过滤器:
+	vue提供过滤器:
+		capitalize	uppercase	currency....
+
+		debounce	配合事件，延迟执行
+	数据配合使用过滤器:
+		limitBy	限制几个
+		limitBy 参数(取几个)
+		limitBy 取几个  从哪开始
+
+		filterBy	过滤数据
+		filterBy ‘谁’
+
+		orderBy	排序
+		orderBy 谁 1/-1
+			1  -> 正序
+			2  -> 倒序
+
+	自定义过滤器:  model ->过滤 -> view
+		Vue.filter(name,function(input){
+			
+		});
+
+	时间转化器
+	过滤html标记
+
+	双向过滤器:*
+	Vue.filter('filterHtml',{
+	            read:function(input){ //model-view
+	                return input.replace(/<[^<+]>/g,'');
+	            },
+	            write:function(val){ //view -> model
+	                return val;
+	            }
+	});
+
+	数据 -> 视图
+	model -> view
+
+	view -> model
+---------------------------------
+v-text
+v-for
+v-html
+	指令: 扩展html语法
+
+自定义指令:
+	属性:
+
+	Vue.directive(指令名称,function(参数){
+		this.el	-> 原生DOM元素
+	});
+
+	<div v-red="参数"></div>
+
+	指令名称: 	v-red  ->  red
+
+	* 注意: 必须以 v-开头
+
+	拖拽:
+	-------------------------------
+自定义元素指令:（用处不大）
+	Vue.elementDirective('zns-red',{
+	    bind:function(){
+	        this.el.style.background='red';
+	    }
+	});
+------------------------------------------------
+@keydown.up
+@keydown.enter
+
+@keydown.a/b/c....
+
+自定义键盘信息:
+	Vue.directive('on').keyCodes.ctrl=17;
+	Vue.directive('on').keyCodes.myenter=13;
+------------------------------------------------
+监听数据变化:
+	vm.$el/$mount/$options/....
+
+	vm.$watch(name,fnCb);  //浅度
+	vm.$watch(name,fnCb,{deep:true});  //深度监视 
+------------------------------------------------
+vue组件:
+组件间各种通信
+slot
+vue-loader	webpack   .vue
+vue-router
+
+
+
+
+
+				
+	
+	
+		
+		
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

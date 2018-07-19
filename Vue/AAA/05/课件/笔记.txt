@@ -1,0 +1,157 @@
+vue2.0:
+	bower info vue
+
+	http://vuejs.org/
+到了2.0以后，有哪些变化?
+
+1. 在每个组件模板，不在支持片段代码
+	组件中模板:
+		之前:
+			<template>
+				<h3>我是组件</h3><strong>我是加粗标签</strong>
+			</template>
+		现在:  必须有根元素，包裹住所有的代码
+			<template id="aaa">
+			        <div>
+			            <h3>我是组件</h3>
+			            <strong>我是加粗标签</strong>
+			        </div>
+			</template>
+2. 关于组件定义
+	Vue.extend	这种方式，在2.0里面有，但是有一些改动，这种写法，即使能用，咱也不用——废弃
+	
+	Vue.component(组件名称,{	在2.0继续能用
+		data(){}
+		methods:{}
+		template:
+	});
+
+	2.0推出一个组件，简洁定义方式：
+	var Home={
+		template:''		->   Vue.extend()
+	};
+3. 生命周期
+	之前:
+		init	
+		created
+		beforeCompile
+		compiled
+		ready		√	->     mounted
+		beforeDestroy	
+		destroyed
+	现在:
+		beforeCreate	组件实例刚刚被创建,属性都没有
+		created	实例已经创建完成，属性已经绑定
+		beforeMount	模板编译之前
+		mounted	模板编译之后，代替之前ready  *
+		beforeUpdate	组件更新之前
+		updated	组件更新完毕	*
+		beforeDestroy	组件销毁前
+		destroyed	组件销毁后
+3. 循环
+	2.0里面默认就可以添加重复数据
+
+	arr.forEach(function(item,index){
+
+	});
+
+	去掉了隐式一些变量
+		$index	$key
+
+	之前:
+		v-for="(index,val) in array"
+	现在:
+		v-for="(val,index) in array"
+
+
+4. track-by="id"
+	变成
+		<li v-for="(val,index) in list" :key="index">
+5. 自定义键盘指令
+	之前：Vue.directive('on').keyCodes.f1=17;	
+	
+	现在:  Vue.config.keyCodes.ctrl=17
+6. 过滤器
+	之前:
+		系统就自带很多过滤
+		{{msg | currency}}
+		{{msg | json}}
+		....
+		limitBy
+		filterBy
+		.....
+	一些简单功能，自己通过js实现
+
+	到了2.0， 内置过滤器，全部删除了
+
+
+	lodash	工具库	_.debounce(fn,200)
+
+
+	自定义过滤器——还有
+		但是,自定义过滤器传参
+
+		之前:	{{msg | toDou '12' '5'}}
+		现在: 	{{msg | toDou('12','5')}}
+------------------------------------------------------
+组件通信:
+	vm.$emit()
+	vm.$on();
+
+	父组件和子组件:
+
+	子组件想要拿到父组件数据:
+		通过  props
+
+	之前，子组件可以更改父组件信息，可以是同步  sync
+	现在，不允许直接给父级的数据，做赋值操作
+
+	问题，就想更改：
+		a). 父组件每次传一个对象给子组件, 对象之间引用	√
+		b). 只是不报错, mounted中转
+------------------------------------------------------
+可以单一事件管理组件通信:	vuex
+	var Event=new Vue();
+
+	Event.$emit(事件名称, 数据)
+
+	Event.$on(事件名称,function(data){
+		//data
+	}.bind(this));
+------------------------------------------------------
+debounce	废弃
+	->   lodash
+		_.debounce(fn,时间)
+------------------------------------------------------
+	
+
+	
+
+		
+
+	
+	
+	
+	
+	
+	
+		
+
+	
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+
+	<script>
+		var Aaa=Vue.extend({
+			template:'<h3>{{msg}}</h3>',
+			data(){
+				return {
+					msg:'ddddd'
+				}
+			}
+		});
+
+
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				bSign:true
+			},
+			components:{ //局部组件 注意这里的my-aaa一定要加引号
+				'my-aaa':Aaa
+			}
+		});
+
+	</script>
+</body>
+</html>

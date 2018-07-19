@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：很明显，v-html的作用就是可以解析html标签
+     而且发现个问题就是，{{{}}}这种形式在vue2.0不起作用，会报错
+     在1.0中出来的效果和v-html是相同的
+    -->
+<div id="app">
+    <div>{{msg}}</div>
+   <!-- <div>{{{msg}}}</div>-->
+
+    <div v-html='msg'></div>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'<i>哈哈123</i>'
+            }
+        })
+    }
+</script>
+</body>
+</html>

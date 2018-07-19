@@ -1,0 +1,112 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>智能课堂 —— 微博ajax接口测试 - www.zhinengshe.com</title>
+<link href="style/weibo.css" rel="stylesheet" type="text/css" />
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script src="../vue.js"></script>
+    <script src="../vue-resource.js"></script>
+    <script>
+        window.onload=function(){
+            var URL='weibo.php';
+
+            new Vue({
+                el:'.znsArea',
+                data:{ //vue的属性、数据
+                    t1:'',
+                    msgData:[]
+                },
+                methods:{
+                    add:function(){
+                        //发送请求
+                        this.$http({
+                            url:URL,
+                            data:{ //后台发送数据
+                                act:'add',
+                                content:this.t1
+                            }
+                        }).then(function(res){
+                            var json=res.data;
+                            //msgData添加数据
+
+                            this.msgData.unshift({
+                                content:this.t1,
+                                time:json.time,
+                                acc:0,
+                                ref:0,
+                                id:json.id
+                            });
+
+                            this.t1='';
+                        });
+                    },
+                    getPageData:function(n){
+                        this.$http({
+                            url:URL,
+                            data:{
+                                act:'get',
+                                page:n
+                            }
+                        }).then(function(res){
+                            //console.log(res.data);
+                            var arr=res.data;
+                            for(var i=0; i<arr.length; i++){
+                               this.msgData.push({
+                                   content:arr[i].content,
+                                   time:arr[i].time,
+                                   acc:arr[i].acc,
+                                   ref:arr[i].ref,
+                                   id:arr[i].id
+                               });
+                            }
+                        });
+                    }
+                },
+                created:function(){
+                   this.getPageData(1);
+                }
+            });
+        };
+    </script>
+</head>
+
+<body>
+<div class="znsArea">
+<!--留言-->
+     <div class="takeComment">
+        <textarea name="textarea" class="takeTextField" id="tijiaoText" v-model="t1"></textarea>
+        <div class="takeSbmComment">
+            <input type="button" class="inputs" value="" @click="add" />
+            <span>(可按 Enter 回复)</span>
+        </div>
+    </div>
+<!--已留-->
+    <div class="commentOn">
+        <div class="noContent" v-show="msgData.length==0">暂无留言</div>
+        <div class="messList">
+        	<div class="reply" v-for="item in msgData" v-cloak>
+                <p class="replyContent">{{item.content}}</p>
+                <p class="operation">
+                    <span class="replyTime">{{item.time}}</span>
+                    <span class="handle">
+                    	<a href="javascript:;" class="top">{{item.acc}}</a>
+                        <a href="javascript:;" class="down_icon">{{item.ref}}</a>
+                        <a href="javascript:;" class="cut">删除</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="page">
+        	<a href="javascript:;" class="active">1</a>
+        	<a href="javascript:;">2</a>
+        	<a href="javascript:;">3</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

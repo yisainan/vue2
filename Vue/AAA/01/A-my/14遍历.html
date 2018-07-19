@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：这里进行的属性绑定  就是v-bind 的缩写
+       
+      -->
+<div id="app">
+     <ul>
+         <li v-for='(item,$index) in arr'>{{item}}----{{$index}}</li>
+     </ul>
+    <ul>
+        <li v-for='(item,key,$index) in list'>{{item}}----{{key}}-----{{$index}}</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+               arr:[1,2,3,4,'z','s'],
+                list:{a:'aaa',b:'bbbb'}
+            }
+        })
+    }
+</script>
+</body>
+</html>

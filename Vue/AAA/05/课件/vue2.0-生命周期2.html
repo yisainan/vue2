@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+                    msg:'welcome vue2.0'
+                },
+                methods:{
+                    update(){
+                        this.msg='大家好';
+                    }
+                },
+                beforeCreate(){
+                    console.log('组件实例刚刚被创建');
+                },
+                created(){
+                    console.log('实例已经创建完成');
+                },
+                beforeMount(){
+                    console.log('模板编译之前');
+                },
+                mounted(){
+                    console.log('模板编译完成');
+                },
+                beforeUpdate(){
+                    console.log('组件更新之前');
+                },
+                updated(){
+                    console.log('组件更新完毕');
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="更新数据" @click="update">
+        {{msg}}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

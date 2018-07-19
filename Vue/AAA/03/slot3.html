@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+<!--区别于slot4
+
+    这是想要的：
+
+
+   -->
+	<div id="box">
+		<aaa>
+			<ul slot="ul-slot">
+				<li>1111</li>
+				<li>2222</li>
+				<li>3333</li>
+			</ul>
+			<ol slot="ol-slot">
+				<li>111</li>
+				<li>222</li>
+				<li>333</li>
+			</ol>
+		</aaa>
+		<hr>
+		<aaa>
+		</aaa>
+	</div>
+		<template id="aaa">
+		<h1>xxxx</h1>
+		<slot name="ol-slot">这是默认的情况</slot>
+		<p>welcome vue</p>
+		<slot name="ul-slot">这是默认的情况2</slot>
+	</template>
+
+	<script>
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				a:'aaa'
+			},
+			components:{
+				'aaa':{
+					template:'#aaa'
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

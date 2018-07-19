@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+  <style>
+    .log{
+      background-color: black;
+      color: white;
+      padding: 10px 30px;
+    }
+  </style>
+</head>
+<body>
+<h2>数组和函数的解构和扩展</h2>
+<script>
+  let str = `
+  //变量的解构
+  let a = 1;
+  let b = 2;
+  let c = 3;
+  //es6
+  let [a,b,c] = [1,2,3];
+
+  let d = {x:3,y:8};
+  d.x //3
+  d.y //8
+
+  let {x,y} = {x:3,y:8};
+
+  let { bar, foo } = { foo: "aaa", bar: "bbb" };
+  foo // "aaa"
+  bar // "bbb"
+
+  var {x, y = 5} = {x: 1};
+  //x=1, y=5
+
+  //字符串的解构
+  const [a, b, c, d, e] = 'hello';
+  //a=h ,b=e, c=l, d=l, e=o
+
+  function add([x, y]){
+    return x + y;
+  }
+
+  add([1, 2]); // 3
+
+  //rest参数
+
+  function add(...values) {
+    let sum = 0;
+
+    for (var val of values) {
+      sum += val;
+    }
+
+    return sum;
+  }
+
+  add(2, 5, 3) // 10
+
+  `;
+
+  console.log(str)
+
+  //扩展运算符
+  console.log(...[1, 2, 3])
+  // 1 2 3
+
+  console.log(1, ...[2, 3, 4], 5)
+  // 1 2 3 4 5
+
+  function add(x, y) {
+    return x + y;
+  }
+
+  var numbers = [4, 38];
+  add(...numbers) // 42
+
+  //合并数组
+  var arr1 = ['a', 'b'];
+  var arr2 = ['c'];
+  var arr3 = ['d', 'e'];
+  arr1.concat(arr2,arr3);
+
+  var arrList = [...arr1,...arr2,...arr3];
+
+
+
+</script>
+<script>
+
+</script>
+
+</body>
+</html>

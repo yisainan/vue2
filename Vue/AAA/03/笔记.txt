@@ -1,0 +1,337 @@
+git page：
+	任何仓库 master分支，都可以发布(git page)
+-------------------------------------
+双向过滤器:
+	Vue.filter(name,{
+		read:
+		write:
+	});
+-------------------------------------
+1.0
+2.0
+-------------------------------------
+引入 vue.js
+-------------------------------------
+
+bower-> （前端）包管理器，类似于npm（后端）的包管理器
+	1.npm install bower -g
+	2.验证: bower --version
+
+bower install <包名>   下载
+bower uninstall <包名>  卸载
+bower info <包名>	查看包版本信息
+
+bower install vue(安装的是最新的vue包)
+bower install vue#1.0.28(安装自已需要的vue版本包)（bower是# ；npm是@）
+
+
+<script src="bower_components/vue/dist/vue.js"></script>   新建文件后引入
+-------------------------------------
+vue-> 过渡(动画)
+	本质走的css3: transtion ,animation
+
+	<div id="div1" v-show="bSign" transition="fade"></div>
+
+	动画:
+		.fade-transition{
+			写的是运动的时间等等
+		}
+		进入：
+		.fade-enter{
+			opacity: 0;
+		}
+		离开：
+		.fade-leave{
+			opacity: 0;
+			transform: translateX(200px);
+		}
+	----------------------------------------
+vue组件:
+	组件: 就是一个大对象
+定义一个组件:
+1. 全局组件
+var Aaa=Vue.extend({
+	template:'<h3>我是标题3</h3>'
+});
+
+Vue.component('aaa',Aaa);
+
+	*组件里面放数据:
+		data必须是函数的形式，函数必须返回一个对象(json)
+2. 局部组件
+	放到某个组件内部
+var vm=new Vue({
+	el:'#box',
+	data:{
+		bSign:true
+	},
+	components:{ //局部组件
+		aaa:Aaa
+	}
+});
+--------------------------------------
+另一种编写方式:
+	Vue.component('my-aaa',{
+		template:'<strong>好</strong>'
+	});
+
+	var vm=new Vue({
+		el:'#box',
+		components:{
+			'my-aaa':{
+				template:'<h2>标题2</h2>'
+			}
+		}
+	});
+-----------------------------------
+配合模板:
+	1. template:'<h2 @click="change">标题2->{{msg}}</h2>'
+
+	2. 单独放到某个地方
+		a). <script type="x-template" id="aaa">
+			<h2 @click="change">标题2->{{msg}}</h2>
+		</script>
+		b). <template id="aaa">
+			<h1>标题1</h1>
+			<ul>
+				<li v-for="val in arr">
+					{{val}}
+				</li>
+			</ul>
+		</template>
+-----------------------------------
+动态组件:
+	<component :is="组件名称"></component>
+--------------------------------------------
+vue-devtools	->  调试工具
+	https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+--------------------------------------------
+vue默认情况下，子组件也没法访问父组件数据
+
+--------------------------------------------
+组件数据传递:	√
+1. 子组件就想获取父组件data
+	在调用子组件：
+		<bbb :m="数据"></bbb>
+
+	子组件之内:
+		props:['m','myMsg']
+
+		props:{
+			'm':String,
+			'myMsg':Number
+		}
+2. 父级获取子级数据
+	*子组件把自己的数据，发送到父级
+
+	vm.$emit(事件名,数据);
+
+	v-on:	@
+--------------------------------------------
+vm.$dispatch(事件名,数据)	子级向父级发送数据     （注：没有代码演示）
+vm.$broadcast(事件名,数据)	父级向子级广播数据
+	配合: event:{}
+
+	在vue2.0里面已经，报废了
+--------------------------------------------
+slot:
+	位置、槽口
+	作用: 占个位置
+
+	类似ng里面 transclude  （指令）
+--------------------------------------------
+vue-> SPA应用，单页面应用
+	vue-resouce	交互
+	vue-router	路由
+
+	安装：
+$ bower info vue-router
+$ bower install vue-router#0.7.13
+
+	根据不同url地址，出现不同效果
+
+	咱上课: 0.7.13
+
+主页	home
+新闻页	news
+
+
+html:
+	<a v-link="{path:'/home'}">主页</a>	跳转链接
+	
+	展示内容:
+	<router-view></router-view>
+js:
+	//1. 准备一个根组件
+	var App=Vue.extend();
+
+	//2. Home News组件都准备
+	var Home=Vue.extend({
+		template:'<h3>我是主页</h3>'
+	});
+
+	var News=Vue.extend({
+		template:'<h3>我是新闻</h3>'
+	});
+
+	//3. 准备路由
+	var router=new VueRouter();
+
+	//4. 关联
+	router.map({
+		'home':{
+			component:Home
+		},
+		'news':{
+			component:News
+		}
+	});
+
+	//5. 启动路由
+	router.start(App,'#box');
+
+跳转:
+	router.redirect({
+		‘/’:'/home'
+	});
+--------------------------------------
+路由嵌套(多层路由):
+	
+	主页	home
+		登录	home/login
+		注册	home/reg
+	新闻页	news
+
+	subRoutes:{
+		'login':{
+			component:{
+				template:'<strong>我是登录信息</strong>'
+			}
+		},
+		'reg':{
+			component:{
+				template:'<strong>我是注册信息</strong>'
+			}
+		}
+	}
+路由其他信息:
+	/detail/:id/age/:age
+
+	{{$route.params | json}}	->  当前参数
+
+	{{$route.path}}	->  当前路径
+	
+	{{$route.query | json}}	->  数据
+--------------------------------------------
+vue-loader:
+	其他loader ->  css-loader、url-loader、html-loader.....
+
+	后台: nodeJs	->  require  exports
+	broserify  模块加载，只能加载js
+	webpack    模块加载器， 一切东西都是模块, 最后打包到一块了
+
+	require('style.css');	->   css-loader、style-loader
+
+	
+	vue-loader基于webpack
+
+.css
+.js
+.html
+.php
+.....
+
+
+a.vue
+b.vue
+
+	.vue文件:
+		放置的是vue组件代码
+
+		<template>
+			html
+		</template>
+	
+		<style>
+			css
+		</style>
+	
+		<script>
+			js	（平时代码、ES6）因为ES6浏览器支持的不是很好，所以用babel-loader编译成ES5浏览器能懂
+		</script>
+-------------------------------------
+简单的目录结构:
+	|-index.html
+	|-main.js	入口文件
+	|-App.vue	vue文件，官方推荐命名法(首字母大写)
+	|-package.json	工程文件(项目依赖、名称、配置)
+		npm init --yes 生成
+	|-webpack.config.js	webpack配置文件
+
+ES6: 模块化开发
+	导出模块：
+		export default {}
+	引入模块:
+		import 模块名 from 地址
+--------------------------------------------
+webpak准备工作:
+	cnpm install webpack --save-dev
+	cnpm install webpack-dev-server --save-dev
+
+	App.vue	-> 变成正常代码		vue-loader@8.5.4
+	cnpm install vue-loader@8.5.4 --save-dev
+
+	cnpm install vue-html-loader --save-dev
+	
+	vue-html-loader、css-loader、vue-style-loader、
+	vue-hot-reload-api@1.3.2
+
+	babel-loader
+	babel-core
+	babel-plugin-transform-runtime
+	babel-preset-es2015
+	babel-runtime
+
+最最核心：
+	
+
+	
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+	
+
+
+   
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

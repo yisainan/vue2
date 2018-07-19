@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    </style>
+    <script src='vue.js'></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="button" @click='add' :disabled='d' value="点击"/>
+        <ul>
+            <li v-for='item in array'>{{item}}</li>
+        </ul>
+    </div>
+<script>
+    /*实现点击一次不可以再点击*/
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                array:['a','b','c'],
+                d:false
+            },
+            methods: {
+              add(){
+               this.array.push('d');
+               this.d = true;
+               }
+            }
+        })
+    }
+</script>
+</body>
+</html>

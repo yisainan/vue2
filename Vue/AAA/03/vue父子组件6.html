@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<aaa>
+		</aaa>
+	</div>
+
+	<template id="aaa">
+		<span>我是父级 -> {{msg}}</span>
+		<!-- 事件名 同下-->
+		<bbb @child-msg="get"></bbb>
+	</template>
+	<template id="bbb">
+		<h3>子组件-</h3>
+		<input type="button" value="send" @click="send">
+	</template>
+	<script>
+		//目的 父组件获得子组件的值（做法其实是子组件将数据发送到父组件）
+		// 发送用 $
+		// 接收用 v-on 或者 @
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				a:'aaa'
+			},
+			components:{
+				'aaa':{
+					data(){
+						return {
+							msg:111,
+							msg2:'我是父组件的数据'
+						}
+					},
+					template:'#aaa',
+					methods:{
+//			         注意：这里的参数就是子组件发送过来的数据
+						get(msg){
+							// alert(msg);
+							this.msg=msg;
+						}
+					},
+					components:{
+						'bbb':{
+							data(){
+								return {
+									a:'我是子组件的数据'
+								}
+							},
+							template:'#bbb',
+							methods:{
+								send(){
+									//emit发射 第一个参数child-msg用于父组件获取，可以叫他事件名，
+//									第二个参数是发送的值
+									this.$emit('child-msg',this.a);
+								}
+							}
+						}
+					}
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

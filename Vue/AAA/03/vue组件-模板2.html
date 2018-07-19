@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+<!--这种用的比较多！一般情况下组件都要配合模板-->
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+
+	<template id="aaa">
+		<h1>标题1</h1>
+		<ul>
+			<li v-for="val in arr">
+				{{val}}
+			</li>
+		</ul>
+	</template>
+
+	<script>
+		var vm=new Vue({
+			el:'#box',
+			components:{
+				'my-aaa':{
+					data(){
+						return {
+							msg:'welcome vue',
+							arr:['apple','banana','orange']
+						}
+					},
+					methods:{
+						change(){
+							this.msg='changed';
+						}
+					},
+					template:'#aaa'
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

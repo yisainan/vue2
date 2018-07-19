@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-resource</title>
+  <script src="../../node_modules/"></script>
+  <script src="../../node_modules/vue-resource/dist/vue-resource.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2>vue-resource演示</h2>
+  <a href="#" @click="sendGet">发送Get请求</a>
+  <a href="#" @click="sendPost">发送Post请求</a>
+  <a href="#" @click="sendJsonp">发送Jsonp请求</a>
+  <a href="#" @click="send">全局函数</a>
+  <p v-text="response"></p>
+</div>
+
+<script>
+
+  new Vue({
+    el:"#app",
+    data:{
+      response:'',
+      msg:''
+    },
+    methods:{
+      sendGet: function () {
+        var _this = this;
+        //http://www.imooc.com/course/ajaxskillcourse?cid=796
+        this.$http.get("/login",{
+          params:{
+            userId:"123"
+          },
+          headers:{
+            access_token:"abcded"
+          }
+        }).then(function (res) {
+          console.log("res:"+res.data.msg);
+          _this.response = res.data;
+        }, function (error) {
+          console.log("error:"+error);
+          _this.response = error;
+        });
+      },
+      sendPost: function () {
+        var _this = this;
+        var params = {
+          username:"sunnyboysoft@163.com",
+          password:"hdeeciu4ZauaDaWF/g+92R8FqNMVA8zoX0UWHinjRM6ND8PMFP9Bt2dr0vGUzZPKXDkzhOJbn3Le0ZcbCiQ1Nx7AIvsrwMzjcSStWNzdyBftzsJS0xsUrtmhqzqaWquXKQoEYgDrP+mNrv0C2ITSpbs+QOql4fPvNSWeAVu54XE=",
+          remember:"1",
+          pwencode:"1",
+          browser_key:"c1eafecb03c5ef07651fb7bd9a7f4b72",
+          referer:"http://www.imooc.com"
+        }
+        //http://www.imooc.com/passport/user/login
+        this.$http.post("/login",params).then(function (res) {
+          console.log("res:"+res.data.msg);
+          _this.response = res.data;
+        }, function (error) {
+          console.log("error:"+error);
+          _this.response = error;
+        });
+      },
+      sendJsonp: function () {
+        var _this = this;
+        this.$http.jsonp("http://www.imooc.com/course/ajaxskillcourse?cid=796",{
+          params:{
+            userId:"1001"
+          }
+        }).then(function (res) {
+          console.log("res:"+res.data.msg);
+          _this.response = res.data;
+        }, function (error) {
+          console.log("error:"+error);
+        });
+      },
+      send: function () {
+        var _this = this;
+        this.$http({
+          url:"package.json",
+          method:"get",
+          params:{
+            userId:"103"
+          },
+          headers:{
+            token:"123"
+          },
+          timeout:5,
+          before: function () {
+            console.log("before init")
+          }
+        }).then(function (res) {
+          this.msg = res.data;
+        });
+      }
+    }
+  });
+</script>
+</body>
+</html>

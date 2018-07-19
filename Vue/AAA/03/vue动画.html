@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+		#div1{
+			width:100px;
+			height:100px;
+			background: red;
+		}
+
+		.fade-transition{
+			transition: 1s all ease;	
+		}
+		.fade-enter{
+			opacity: 0;
+		}
+		.fade-leave{
+			opacity: 0;
+			transform: translateX(200px);
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<input type="button" value="按钮" @click="toggle">
+		<!--动画的名称，fade-->
+		<div id="div1" v-show="bSign" transition="fade"></div>
+	</div>
+
+	<script>
+		new Vue({
+			el:'#box',
+			data:{
+				bSign:true
+			},
+			methods:{
+				/*toggle:function(){
+					alert(1);
+				}*/
+				/*下面的写法是ES6的写法，效果同上*/
+				toggle(){
+					this.bSign=!this.bSign;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

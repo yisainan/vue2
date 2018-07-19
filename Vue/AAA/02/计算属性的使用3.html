@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div id="box">
+        a => {{a}}
+        <br>
+        b => {{b}}
+    </div>
+    <script>
+        var vm=new Vue({
+            el:'#box',
+            data:{
+                a:1
+            },
+            computed:{
+                b:{
+                    get:function(){
+                        return this.a+2;
+                    },
+                    set:function(val){
+                        this.a=val;
+                    }
+                }
+            }
+        });
+
+        document.onclick=function(){
+            vm.b=10;
+        };
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

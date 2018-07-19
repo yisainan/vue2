@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .gray{
+            background: #ccc;
+        }
+    </style>
+    <script src='vue.js'></script>
+    <script src='vue-resource.js'></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='t1' @keyup='get' @keydown.down='changeDown()' @keydown.up.prevent='changeUp'/>
+        <ul>
+            <li v-for='(item,$index) in myData' :class='{gray:$index==now}'>
+               {{item}} ==== {{$index}}
+            </li>
+        </ul>
+        <div v-show='myData.length == 0'>还没有数据</div>
+    </div>
+<script>
+    /* 总结：1、:class的使用，后面可以是对象！！！
+     *      2、 @keydown.down的使用，查询完可以按↓
+      *
+      *
+      *
+      *      */
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                t1:'',
+                now:-1,
+                myData:[]
+            },
+            methods:{
+                get:function(ev){
+                    if(ev.keyCode==38 || ev.keyCode==40)return;  //起到的作用，就是再次点击 ↑↓ 键的时候，不会重新的发送请求获取数据
+                    if(ev.keyCode==13){           //起到的作用：点击回车，直接去百度里搜索
+                        window.open('https://www.baidu.com/s?wd='+this.t1);
+                        this.t1='';
+                    }
+                    this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+                        wd:this.t1
+                    },{
+                        jsonp:'cb'
+                    }).then(function(res){
+                        this.myData=res.data.s;
+                    },function(){
+
+                    });
+                },
+                changeDown:function(){
+                    this.now++;
+                    if(this.now==this.myData.length)this.now=-1; //作用：为了灰框移出去后，还可以再回来
+                    this.t1 = this.myData[this.now];
+                },
+                changeUp:function(){
+                    this.now--;
+                    if(this.now==-2)this.now = this.myData.length-1;
+                    this.t1 = this.myData[this.now];
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

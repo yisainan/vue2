@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：这里进行的属性绑定  就是v-bind 的缩写
+       
+      -->
+<div id="app">
+    <img :src="url" alt="" :width='w'/>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                w:'222px',
+                url:'http://img1.imgtn.bdimg.com/it/u=1902468542,2120439953&fm=200&gp=0.jpg'
+            }
+        })
+    }
+</script>
+</body>
+</html>

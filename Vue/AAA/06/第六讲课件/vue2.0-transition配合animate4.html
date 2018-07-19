@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        p{
+            width:100px;
+            height:100px;
+            background: red;
+            margin:0 auto;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="animate.css">
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+                    show:false
+                },
+                transitions:{ //错的
+                    enterActiveClass:'zoomInLeft',
+                    leaveActiveClass:'zoomOutRight'
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="点击显示隐藏" @click="show=!show">
+
+        <transition name="transition">
+            <p v-show="show" class="animated"></p>
+        </transition>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

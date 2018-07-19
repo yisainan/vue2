@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+                    arr:['apple','banana','orange','pear'],
+                    json:{a:'apple',b:'banana',c:'orange'}
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="value in arr">
+                {{value}}   {{$index}}
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li v-for="value in json">
+                {{value}}   {{$index}}  {{$key}}
+            </li>
+        </ul>
+
+        <hr>
+        <ul>
+            <li v-for="(k,v) in json">
+                {{k}}   {{v}}   {{$index}}  {{$key}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

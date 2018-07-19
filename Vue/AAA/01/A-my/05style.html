@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+/*        .red { color:red}
+        .blue { background-color: blue}*/
+    </style>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：''内部是一个对象！！！没有{}是错误的
+
+          并且注意这里的‘red’是与上面样式中的无关的-->
+<div id="app">
+  <!--  <span :style="color:'red'">123123</span>-->
+    <span :style="{color:'red'}">123123</span>
+</div>
+</body>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+            }
+        })
+    }
+</script>
+</html>

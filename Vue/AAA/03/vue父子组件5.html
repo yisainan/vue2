@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<aaa>
+		</aaa>
+	</div>
+
+	<template id="aaa">
+		<h1>11111</h1>
+		<bbb :mmm="msg2" :my-msg="msg"></bbb>
+	</template>
+	<script>
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				a:'aaa'
+			},
+			components:{
+				'aaa':{
+					data(){
+						return {
+							msg:111,
+							msg2:'我是父组件的数据'
+						}
+					},
+					template:'#aaa',
+					components:{
+						'bbb':{
+							props:{
+								'mmm':String,
+								'myMsg':Number
+							},
+							template:'<h3>我是bbb组件->{{mmm}} <br> {{myMsg}}</h3>'
+						}
+					}
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

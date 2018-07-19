@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        .gray{
+            background: #ccc;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-resource.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'body',
+                data:{
+                    myData:[],
+                    t1:'',
+                    now:-1
+                },
+                methods:{
+                    get:function(ev){
+                        if(ev.keyCode==38 || ev.keyCode==40)return;
+
+                        if(ev.keyCode==13){
+                            window.open('https://www.baidu.com/s?wd='+this.t1);
+                            this.t1='';
+                        }
+
+                        this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{
+                            wd:this.t1
+                        },{
+                            jsonp:'cb'
+                        }).then(function(res){
+                            this.myData=res.data.s;
+                        },function(){
+                            
+                        });
+                    },
+                    changeDown:function(){
+                        this.now++;
+                        if(this.now==this.myData.length)this.now=-1;
+                        this.t1=this.myData[this.now];
+                    },
+                    changeUp:function(){
+                        this.now--;
+                        if(this.now==-2)this.now=this.myData.length-1;
+                        this.t1=this.myData[this.now];
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="t1" @keyup="get($event)" @keydown.down="changeDown()" @keydown.up.prevent="changeUp()">
+        <ul>
+            <li v-for="value in myData" :class="{gray:$index==now}">
+                {{value}}
+            </li>
+        </ul>
+        <p v-show="myData.length==0">暂无数据...</p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,150 @@
+vue动画
+vue路由
+--------------------------------------
+transition 之前  属性
+<p transition="fade"></p>
+
+.fade-transition{}
+.fade-enter{}
+.fade-leave{}
+--------------------------------------
+
+到2.0以后 transition 组件
+
+<transition name="fade">
+	运动东西(元素，属性、路由....)
+</transition>
+
+class定义:
+.fade-enter{}	//初始状态
+.fade-enter-active{}  //变化成什么样  ->  当元素出来(显示)
+
+.fade-leave{}
+.fade-leave-active{} //变成成什么样   -> 当元素离开(消失)
+
+如何animate.css配合用？
+	<transition enter-active-class="animated zoomInLeft" leave-active-class="animated zoomOutRight">
+            	<p v-show="show"></p>
+        	</transition>
+
+多个元素运动:
+	<transition-group enter-active-class="" leave-active-class="">
+		<p :key=""></p>
+		<p :key=""></p>
+	</transition-group>
+------------------------------------------
+vue2.0 路由:
+	http://router.vuejs.org/zh-cn/index.html
+基本使用:
+1.  布局
+	<router-link to="/home">主页</router-link>
+
+	<router-view></router-view>
+2. 路由具体写法
+	//组件
+	var Home={
+	    template:'<h3>我是主页</h3>'
+	};
+	var News={
+	    template:'<h3>我是新闻</h3>'
+	};
+
+	//配置路由
+	const routes=[
+	    {path:'/home', componet:Home},
+	    {path:'/news', componet:News},
+	];
+
+	//生成路由实例
+	const router=new VueRouter({
+	    routes
+	});
+
+	//最后挂到vue上
+	new Vue({
+	    router,
+	    el:'#box'
+	});
+3. 重定向
+	之前  router.rediect  废弃了
+	{path:'*', redirect:'/home'}
+------------------------------------------
+路由嵌套:
+	/user/username
+
+	const routes=[
+	    {path:'/home', component:Home},
+	    {
+	        path:'/user',
+	        component:User,
+	        children:[  //核心
+	            {path:'username', component:UserDetail}
+	        ]
+	    },
+	    {path:'*', redirect:'/home'}  //404
+	];
+------------------------------------------
+/user/strive/age/10
+
+:id
+:username
+:age
+------------------------------------------
+路由实例方法:
+	router.push({path:'home'});  //直接添加一个路由,表现切换路由，本质往历史记录里面添加一个
+	router.replace({path:'news'}) //替换路由，不会往历史记录里面添加
+------------------------------------------
+vue-cli
+------------------------------------------
+npm install
+------------------------------------------
+脚手架:  vue-loader
+	1.0  -> 
+	new Vue({
+	  el: '#app',
+	  components:{App}
+	})	
+	2.0->
+	new Vue({
+	  el: '#app',
+	  render: h => h(App)
+	})
+------------------------------------------
+vue2.0 
+	vue-loader和vue-router配合
+------------------------------------------
+
+style-loader	css-loader
+
+	style!css
+------------------------------------------
+项目:
+------------------------------------------
+
+
+	
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

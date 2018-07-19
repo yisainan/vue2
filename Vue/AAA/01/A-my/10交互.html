@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    </style>
+    <script src='vue.js'></script>
+    <script src='vue-resource.js'></script>
+</head>
+<!--总结：亲测，如果1.txt改为其他不存在的文件名称就会提示‘错误’-->
+<body>
+    <div id="app">
+        <input type="button" @click='get' value="点击"/>
+    </div>
+<script>
+    /*总结：post请求  {emulateJSON:true}必须写上*/
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                get() {
+                   this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',{wd:'a'},{jsonp:"cb"}).then(function(res){
+                       alert(res.data.s);
+                   },function(res){
+                        alert('错误')
+                   })
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

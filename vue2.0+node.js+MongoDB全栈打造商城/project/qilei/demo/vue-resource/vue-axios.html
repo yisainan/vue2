@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../../node_modules/requirejs/require.js"></script>
+  <script src="../../node_modules/vue/dist/vue.js"></script>
+  <script src="../../node_modules/axios/dist/axios.js"></script>
+  <script src="../../node_modules/jsonp/index.js"></script>
+</head>
+<body>
+<div id="app">
+  <h2>axios演示</h2>
+  <a href="#" @click="sendGet">发送Get请求</a>
+  <a href="#" @click="sendPost">发送Post请求</a>
+  <a href="#" @click="sendJsonp">发送Jsonp请求</a>
+  <a href="#" @click="send">全局函数</a>
+  <p v-text="response"></p>
+</div>
+<script>
+//  Vue.use(axios);
+  Vue.prototype.$http = axios;
+  new Vue({
+    el:"#app",
+    data:{
+      response:''
+    },
+    methods:{
+      sendGet: function () {
+        var _this = this;
+        //
+        axios.get("/login",{
+          params:{
+            userId:"123"
+          },
+          headers:{
+            access_token:"abcded"
+          }
+        }).then(function (res) {
+          console.log("res:"+res.data.msg);
+          _this.response = res.data;
+        }).catch(function (err) {
+          console.log("error:"+err);
+        });
+      },
+      sendPost: function () {
+        var _this = this;
+        var params = {
+          username:"sunnyboysoft@163.com",
+          password:"hdeeciu4ZauaDaWF/g+92R8FqNMVA8zoX0UWHinjRM6ND8PMFP9Bt2dr0vGUzZPKXDkzhOJbn3Le0ZcbCiQ1Nx7AIvsrwMzjcSStWNzdyBftzsJS0xsUrtmhqzqaWquXKQoEYgDrP+mNrv0C2ITSpbs+QOql4fPvNSWeAVu54XE=",
+          remember:"1",
+          pwencode:"1",
+          browser_key:"c1eafecb03c5ef07651fb7bd9a7f4b72",
+          referer:"http://www.imooc.com"
+        }
+        //http://www.imooc.com/passport/user/login
+        axios.post("/login",params).then(function (res) {
+          console.log("res:"+res.data.msg);
+          _this.response = res.data;
+        }).catch(function (err) {
+          console.log("error:"+err);
+        });
+      },
+      sendJsonp: function () {
+        var _this = this;
+        jsonp("http://www.imooc.com/course/ajaxskillcourse?cid=796",{
+          params:{
+            userId:"1001"
+          }
+        },function (res) {
+          console.log("res:"+res.data.msg);
+          _this.response = res.data;
+        });
+      },
+      send: function () {
+        var _this = this;
+        axios({
+          method: 'post',
+          url: '/user/12345',
+          data: {
+            firstName: 'Fred',
+            lastName: 'Flintstone'
+          }
+        }).then(function (res) {
+          console.log("res:"+res.data.msg);
+          _this.response = res.data;
+        }).catch(function (err) {
+          console.log("error:"+err);
+        });;
+      }
+    }
+  });
+</script>
+</body>
+</html>

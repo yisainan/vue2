@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：使用$mount进行手动挂载-->
+<div id="app">{{a}}</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            data:{
+                a:1,
+                b:2
+            }
+        }).$mount('#app');       //这是连写
+         // vm.$mount('#app');   // 这是分着写
+
+    }
+</script>
+</body>
+</html>

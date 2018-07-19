@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6-2</title>
+</head>
+<body>
+<h2>ES6-2</h2>
+<div></div>
+<script>
+  function checkLogin(){
+    return new Promise(function (resolve,reject) {
+
+      /*
+      * 根据Cookie判断当前用户是否登录
+      * **/
+
+      let cookieFlag = document.cookie.indexOf("userId")>-1?true:false
+
+      if(cookieFlag=true){
+        resolve({
+          status:0,
+          result:true
+        })
+      }else{
+
+        reject("error")
+      }
+
+    });
+  }
+
+  function getUserId(){
+    return new Promise(function (resolve,reject) {
+      let user = {
+        userId:"101"
+      }
+      resolve(user);
+    })
+  }
+
+  checkLogin().then(function (res) {
+    if(res.status==0){
+      console.log("login success")
+      return getUserId();
+    }else{
+      console.log("login fail")
+    }
+  }).catch(function (error) {
+    console.log("login error")
+  }).then(function (res2) {
+    console.log("userId:"+res2.userId);
+  })
+
+  Promise.all([checkLogin(),getUserId()]).then(function ([res1,res2]) {
+    console.log("res1"+res1);
+    console.log("res2"+res2);
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+
+                },
+                methods:{
+                    show1:function(){
+                        alert('上键');
+                    },
+                    show2:function(){
+                        alert('左键');
+                    }
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+<!--总结：对比发现规律
+	@keyup/keydown.left
+	@keyup/keydown.right
+	@keyup/keydown.up
+	@keyup/keydown.down-->
+    <div id="box">
+        <input type="text" @keyup.up="show1()" @keyup.left="show2()">
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：$watch的用法，第一个参数是要绑定的变量，第二个参数是回调函数，可以监听数据的变化   -->
+<div id="app">
+    <input type="button" value="点击" v-on:click='add()'/>
+    <br/>
+    {{a}}
+    <br/>
+    {{b}}
+</div>
+<script>
+    var vm=new Vue({
+        data:{
+            a:1,
+            b:2
+        },
+        methods:{
+           add(){
+            this.a = 3;
+            this.b = this.a * 100;
+           }
+        }
+    }).$mount('#app');
+
+    vm.$watch('a',function(){
+        alert('发生了变化')
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>合成图片</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link href="js/swiper.min.css" rel="stylesheet" type="text/css">
+<link href="index/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="wrap-box">
+	<div class="picture">
+		<div class="logo"><img src="index/images/logo.png"></div>
+		<div style="" id="pic" class="pic">
+			<div class="img1" id="clipArea"></div>
+			<div class="img2">
+				<div class="img-btn clearfix">
+					<button class="imagesbtn fr" id="clipBtn"><img src="index/images/imgbtn2.png"></button>
+					<div class="imgup  fr"><img src="index/images/imgbtn1.png"><input type="file" id="file" class="upbtn"></div>
+					<div id="view"></div>
+				</div>
+				<div class="text-box">
+					<div class="t1 clearfix">
+						<img class="fl t1-img" src="index/images/to.png">
+						<input type="text" class="fl t1-text" id="t1-text" name="">
+					</div>
+					<div class="t2">
+						<textarea class="t2-text" name="" id="t2text"></textarea>
+						<span class="t2-xz">（输入少于35字）</span>
+						<span class="t2-line"></span>
+					</div>
+					<div class="t3 clearfix">
+						<div class="t3-text fr">
+							<img class="fl t3-img" src="index/images/from.png">
+							<input type="text" class="fl t3-text1" name="" >
+						</div>
+						<div class="t3-tx fr"><img src="index/images/tx.png"></div>
+					</div>
+				</div>
+				<div class="return"><img src="index/images/return.png"></div>
+				<span class="ble-text">经典祝福语</span>
+			</div>
+		</div>
+	</div>
+	<div class="template1 hide">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="sw-tx"></div>
+					<div class="sw-text" data-value="愿你所有的圣诞梦想都成真！">
+						愿你所有的圣诞梦想都成真
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="sw-tx"></div>
+					<div class="sw-text" data-value="在圣诞和新年来临之际，祝福你平安、快乐、幸福！">
+						在圣诞和新年来临之际，祝福你平安、快乐、幸福！
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="sw-tx"></div>
+					<div class="sw-text" data-value="愿你度过最美好的圣诞节！">
+						愿你度过最美好的圣诞节！
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="sw-tx"></div>
+					<div class="sw-text" data-value="在全世界都沉浸在幸福的时刻,我更加的想念你。 ">
+						在全世界都沉浸在幸福的时刻,我更加的想念你。
+					</div>
+				</div>
+			</div>
+			<div class="sw-tx1"><img src="index/images/tx.png"></div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+		</div>
+		<div class="tem-btn1 tem1-btn1">返&nbsp;回</div>
+		<div class="tem-btn2 tem1-btn2">选&nbsp;用</div>
+	</div>
+	<div class="template2 hide">
+		<div class="swiper-container1">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide swiper-slide1"><img src="index/images/moban11.jpg"><div class="mask"></div></div>
+				<div class="swiper-slide swiper-slide2"><img src="index/images/moban11.jpg"><div class="mask"></div></div>
+				<div class="swiper-slide swiper-slide3"><img src="index/images/moban11.jpg"><div class="mask"></div></div>
+			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
+			<!-- Add Arrows -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="tem3">
+				<p class="tem3text">选择您心仪的模版，生成您的祝福</p>
+				<div class="tem-btn1 tem2-btn1">返&nbsp;回</div>
+				<div class="tem-btn2 tem2-btn2">选&nbsp;用</div>
+			</div>
+		</div>
+	</div>
+	<div class="record">
+		
+	</div>
+</div>
+<script src="js/jquery-2.1.3.min.js"></script>
+
+<script src="js/swiper.min.js"></script>
+<script src='js/jquery.eraser.js' type='text/javascript'></script>
+<script src="js/iscroll-zoom.js"></script>
+<script src="js/hammer.js"></script>
+<script src="js/lrz.all.bundle.js"></script>
+<script src="js/jquery.photoClip.js"></script>
+<script src="js/index.js"></script>
+
+<script>
+var clipArea = new bjj.PhotoClip("#clipArea", {
+	size: [260, 260],
+	outputSize: [640, 640],
+	file: "#file",
+	view: "#view",
+	ok: "#clipBtn",
+	loadStart: function() {
+		console.log("照片读取中");
+		$(".photo-clip-mask-left,.photo-clip-mask-right,.photo-clip-mask-top").addClass("maskbg");
+		$(".photo-clip-area").css({"background":"none"})
+	},
+	loadComplete: function() {
+		console.log("照片读取完成");
+	},
+	clipFinish: function(dataURL) {
+		check();
+		console.log(dataURL);
+		console.log(document.getElementById("t1-text").value)
+		console.log(document.getElementById("t2text").value)
+		// $.post("http://wx.iddi-inc.com/app/170104/action.php?act=poster",
+		//     {
+		//         "act":"poster", 
+		// 		"dataURL": dataURL,
+		// 		"nametext": ""
+		//     },function(data,status){
+		//         alert("数据: \n" + data + "\n状态: " + status);
+		// });
+		
+
+	}
+});
+function check() { 
+  var regC = /[^ -~]+/g; 
+  var regE = /\D+/g;
+  var t1 = $('.t1-text')
+  var str = t1.val(); 
+
+  if (regC.test(str)){ 
+    t1.val(str.substr(0,10)); 
+  } 
+  if(regE.test(str)){ 
+  	t1.val(str.substr(0,20))
+  } 
+} 
+</script>
+<script>
+window.onload=function(){
+var swiper = new Swiper('.swiper-container', {
+	pagination: '.swiper-pagination',
+	paginationClickable: '.swiper-pagination',
+	nextButton: '.swiper-button-next',
+	prevButton: '.swiper-button-prev',
+	spaceBetween: 30,
+	loop:true
+});
+}
+</script>
+</body>
+</html>

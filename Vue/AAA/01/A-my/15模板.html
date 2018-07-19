@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：下面vue1.0中的两个写法在2.0中报错！！！！-->
+<div id="app">
+    <input type="text" v-model="msg"/>
+    <div>{{msg}}</div>
+    <!-- 可以把html转译输出-->
+    <!--<div>{{{msg}}}</div>-->
+    <!--数据只绑定一次，之后不会变-->
+    <!--<div>{{*msg}}</div>-->
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+              msg:'123'
+            }
+        })
+    }
+</script>
+</body>
+</html>

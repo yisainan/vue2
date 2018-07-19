@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        //准备一个空的实例对象
+        var Event=new Vue();
+
+
+        var A={
+            template:`
+                <div>
+                    <span>我是A组件</span> -> {{a}}
+                    <input type="button" value="把A数据给C" @click="send">
+                </div>
+            `,
+            methods:{
+                send(){
+                    Event.$emit('a-msg',this.a);
+                }
+            },
+            data(){
+                return {
+                    a:'我是a数据'
+                }
+            }
+        };
+        var B={
+            template:`
+                <div>
+                    <span>我是B组件</span> -> {{a}}
+                    <input type="button" value="把B数据给C">
+                </div>
+            `,
+            data(){
+                return {
+                    a:'我是b数据'
+                }
+            }
+        };
+        var C={
+            template:`
+                <div>
+                    <h3>我是C组件</h3>
+                    <span>接收过来的A的数据为: {{a}}</span>
+                </div>
+            `,
+            data(){
+                return {
+                    a:'',
+                    b:''
+                }
+            },
+            mounted(){
+                //var _this=this;
+                Event.$on('a-msg',function(a){
+                    this.a=a;
+                }.bind(this));
+            }
+        };
+
+
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                components:{
+                    'com-a':A,
+                    'com-b':B,
+                    'com-c':C
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <com-a></com-a>
+        <com-b></com-b>
+        <com-c></com-c>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

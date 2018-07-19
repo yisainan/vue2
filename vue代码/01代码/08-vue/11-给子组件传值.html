@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+
+    <!--
+        给子组件传值
+           1、组件对应的标签上 绑定vue实例的数据 :test="url"     test是组件中的属性  url是vue中的数据
+
+           2、给组件中增加一个props的属性 数组  用来接收 vue实例传过来的数据 
+    -->
+    <my-title :test="url" ></my-title>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        url: '/postcomment/1'
+      },
+      //私有组件
+      components: {
+        'my-title': {
+          data() {
+            return {
+              msg: '我是大标题'
+            }
+          },
+          props:['test'],
+          template: '<h1>{{msg}}--- {{test}}</h1>'
+        }
+      }
+    });
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdn.bootcss.com/vue/2.3.3/vue.min.js"></script>
+  <script src="https://cdn.bootcss.com/vue-resource/1.3.3/vue-resource.min.js"></script>
+</head>
+<body>
+  <div id="app" class="container">
+      <h1>vue-page插件</h1>
+    <page :allpage="totalPage" @goto="searchPage"></page>
+  </div>
+  <script>
+    //分页模板
+    var template = '<ul class="pagination" >'+
+      '<li v-show="current > 1" @click="goto(1)" ><a href="javascript:;">首页</a></li>'+
+      '<li v-show="current != 1" @click="current-- && goto(current--)" ><a href="javascript:;">上一页</a></li>'+
+      '<li v-for="index in pages" @click="goto(index)" :class="{\'active\':current == index}" :key="index">'+
+      '<a href="javascript:;" >{{index}}</a>'+
+      '</li>'+
+      '<li v-show="allpage != current && allpage != 0 " @click="current++ && goto(current++)"><a href="javascript:;" >下一页</a></li>'+
+      '<li v-show="allpage != current" @click="goto(allpage)"><a href="javascript:;" >尾页</a></li>'+
+      '</ul>';
+    //定义一个分页组件
+    Vue.component("page",{
+      template:template,
+      props:['allpage'],
+      data:function(){
+        return{
+          current:1,
+          showItem:11
+        }
+      },
+      computed:{
+        pages:function(){
+          var pag = [];
+          if( this.current < this.showItem ){ //如果当前的激活的项 小于要显示的条数
+            //总页数和要显示的条数那个大就显示多少条
+            var i = Math.min(this.showItem,this.allpage);
+            while(i){
+              pag.unshift(i--);
+            }
+          }else{ //当前页数大于显示页数了
+            var middle = this.current - Math.floor(this.showItem / 2 ),//从哪里开始
+              i = this.showItem;
+            if( middle >  (this.allpage - this.showItem)  ){
+              middle = (this.allpage - this.showItem) + 1
+            }
+            while(i--){
+              pag.push( middle++ );
+            }
+          }
+          return pag
+        }
+      },
+      methods:{
+        setPage:function () {
+          //根据一页10条,计算一共有多少页
+          this.allpage = Math.ceil(this.totalNum/20);
+          console.log("allpage:"+this.totalNum)
+        },
+        goto:function(index){
+          if(index == this.current) return;
+          this.current = index;
+          //这里可以发送ajax请求
+          this.$emit("goto",index);
+        }
+      }
+
+    });
+      window.vm = new Vue({
+        el:"#app",
+        data:{
+          msg:'',
+          totalPage:0
+        },
+        mounted: function () {
+          this.searchPage(1);
+        },
+        http:{
+          root:"http://localhost:63342/ImoocMall/"
+        },
+        methods:{
+          searchPage(pageNum){
+            var that = this;
+            this.$http.get("package.json",{
+              params:{
+                pageNum:pageNum
+              },
+              headers:{
+                token:"abcd"
+              }
+            }).then(res=>{
+              this.msg = res.data;
+              this.totalPage = 10;
+          },error=>{
+              this.msg = error;
+            });
+          }
+        }
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<aaa></aaa>
+	</div>
+
+	<script>
+		var Aaa=Vue.extend({
+			template:'<h3>{{msg}}</h3>',
+			data(){
+				return {
+					msg:'ddddd'
+				}
+			}
+		});
+        /*对比：全局的组件*/
+		/*Vue.component('aaa',Aaa);*/
+
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				bSign:true
+			},
+			//局部组件 注意是复数components
+			components:{
+				aaa:Aaa
+			}
+		});
+
+	</script>
+</body>
+</html>

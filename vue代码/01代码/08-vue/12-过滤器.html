@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{msg | toLower | replace('l', 'x')}}
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello World'
+      },
+      filters: {
+        toLower(input) {
+          //转换小写的过滤器
+          return input.toLowerCase();
+        },
+        replace(input, oldValue, newValue) {
+          // var reg = /\d{5}/;
+          // var reg = new RegExp('\d{5}')
+          //替换的过滤器
+          //正则替换
+          var reg = new RegExp(oldValue, 'gi');
+
+          return input.replace(reg, newValue);
+        }
+      }
+    })
+  </script>
+</body>
+</html>

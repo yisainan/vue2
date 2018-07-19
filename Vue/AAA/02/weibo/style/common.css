@@ -1,0 +1,36 @@
+@charset "utf-8";
+/*
+智能社：用户注册ajax接口测试
+日期：2013年3月29日
+*/
+*{margin:0; padding:0;}
+li{list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+input,textarea{outline:none; resize:none; border:none;}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix{*zoom:1;}
+
+body{background:url(../img/bg.jpg) center center no-repeat; background-size:100% 140%;}
+/*登陆*/
+.loginBox{
+	width:278px; padding:30px 80px 20px 80px; margin:40px auto; 
+	background-image: -webkit-linear-gradient(top,rgb(255,255,255),rgb(242,242,242));
+	box-shadow: 0 0 3px rgba(21,62,78,0.8); position:relative;
+	border-radius:2px;
+}
+.loginList{width:100%;}
+.loginList li{margin-bottom:10px; overflow:hidden;}
+.hTxt{font:18px/1.5 "Microsoft YaHei";}
+.inputs{width:260px; display:block; font-weight:bold; background:url(../img/inputBg.png) 0 0 no-repeat; height:14px; line-height:14px; padding:9px; color:#666;}
+.loginList .btns{text-align:right; background:none; width:280px;}
+.reg{background:url(../img/btns.png) 0 -42px no-repeat; width:70px; height:42px; display:inline-block; overflow:hidden; opacity:.8;}
+.login{background:url(../img/btns.png) 0 0 no-repeat; width:70px; height:42px; display:inline-block; overflow:hidden; opacity:.8;}
+.reg:hover,.login:hover{opacity:1;}
+.reg:active,.login:active{opacity:.9;}
+.look{text-align:right; font:12px/1.2 "Microsoft YaHei"; color:#999;}
+
+/*ad*/
+.ad{background:url(../img/ad.png) left top no-repeat; position:fixed; bottom:20px; height:16px; left:50%; width:106px; margin-left:-53px;}
+::selection {background-color:#669900; color:#ffffff;}
+::-moz-selection {background-color:#669900; color:#ffffff;}

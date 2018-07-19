@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+  <style>
+    .log{
+      background-color: black;
+      color: white;
+      padding: 10px 30px;
+    }
+  </style>
+</head>
+<body>
+<h2>let和const</h2>
+<div id="log" class="log">
+
+</div>
+<script>
+  //let and const
+  //作用域
+  {
+    let a = 10;
+    var b = 1;
+  }
+
+  a // ReferenceError: a is not defined.
+  b // 1
+
+
+  var a = [];
+  for (var i = 0; i < 10; i++) {
+    (function(arg) {
+      a[i] = function () {
+
+        return arg;
+      }
+    })(i);
+  }
+  a[6](); // 10
+
+  for(let i=0;i<10;i++){
+    a[i] = function () {
+      return i;
+    }
+  }
+
+  let a = 5;
+  a = 6;
+
+  const c = 5;
+  c = 10 ; //error
+
+  const obj = {a:1};
+  obj.b = 2;
+
+  obj = {c:1}//error
+
+  // var 的情况
+  console.log(foo); // 输出undefined
+  var foo = 2;
+
+  // let 的情况
+  console.log(bar); // 报错ReferenceError
+  let bar = 2;
+
+  //模板字符串
+
+  var name = 'Your name is ' + first + ' ' + last + '.';
+  var url = 'http://localhost:3000/api/messages/' + id;
+
+  document.getElementById("log").innerText = `let bar = 2;变量bar的值为:${bar}`;
+  let html = `<div>
+                <span>test template</span>
+              </div>`;
+
+  //默认参数
+  function sum(a,b = 8){return a+b;}
+
+  sum(2);
+
+
+
+  //箭头函数
+  var map = [2,5,7,8];
+
+  let res1 = map.map(function (item) {
+    console.log("init")
+    return item+1;
+  })
+
+  map.map((item)=>item+1);
+
+  map.map((item)=>{
+    console.log("init")
+    return item+1;
+  })
+
+  var _this = this;
+  $("btn").on("click", function () {
+    _this.getInfo();
+  });
+
+  $("btn").on("click",()=>{
+    this.getInfo();
+  })
+
+</script>
+
+</body>
+</html>

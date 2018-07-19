@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="bower_components/animate.css/animate.css">
+	<style>
+		#box{
+			width:400px;
+			margin: 0 auto;
+		}
+		#div1{
+			width:100px;
+			height:100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+<!--动画一般使用的是animate.css
+安装 $ bower install animate.css 下载的是最新的版本
+-->
+	<div id="box">
+		<input type="button" value="按钮" @click="toggle">
+		<!--class="animated"这是必须的（让谁动给谁加）-->
+		<div id="div1" class="animated" v-show="bSign" transition="bounce"></div>
+	</div>
+
+	<script>
+		new Vue({
+			el:'#box',
+			data:{
+				bSign:true
+			},
+			methods:{
+				toggle(){
+					this.bSign=!this.bSign;
+				}
+			},
+		/*transitions*/
+			transitions:{ //定义所有动画名称
+				bounce:{
+					/*进入的时候 后面是类名*/
+					enterClass:'zoomInLeft',
+					/*离开的时候*/
+					leaveClass:'zoomOutRight'
+				}
+			}
+		});
+	</script>
+</body>
+</html>

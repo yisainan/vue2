@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        Vue.filter('toDou',function(n,a,b){
+            alert(a+','+b);
+            //alert(input);
+            return n<10?'0'+n:''+n;
+        });
+
+        window.onload=function(){
+            new Vue({
+                el:'#box',
+                data:{
+                    msg:9
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        {{msg | toDou '12' '5'}}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

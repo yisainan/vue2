@@ -1,0 +1,139 @@
+vue问题:
+	论坛
+	http://bbs.zhinengshe.com
+------------------------------------------------
+UI组件
+	别人提供好一堆东西
+
+	目的: 
+		为了提高开发效率
+		功能
+
+	原则: 拿过来直接使用
+
+vue-cli  ->  vue-loader
+
+bootstrap:
+	twitter	开源
+	简洁、大方
+	官网文档
+
+	基于 jquery
+
+	栅格化系统+响应式工具  (移动端、pad、pc)
+	按钮
+--------------------------------
+bower	前端包管理器	   jquery#1.11.1
+	自动解决依赖
+npm	node包管理器	  jquery@1.11.1
+--------------------------------
+
+饿了么团队开源一个基于vue 组件库
+	elementUI	PC
+	MintUI		移动端
+--------------------------------
+elementUI:
+	如何使用
+
+	官网:http://element.eleme.io/
+使用:
+1. 安装 element-ui
+	npm i element-ui -D
+
+	npm install element-ui --save-dev
+
+	//   i	->    install
+	//   D     ->    --save-dev
+	//   S	->    --save
+2. 引入   main.js	入口文件
+	import ElementUI from 'element-ui'
+	import 'element-ui/lib/theme-default/index.css'
+
+	全部引入
+3. 使用组件
+	Vue.use(ElementUI)
+
+	css-loader  	引入css
+	字体图标	file-loader
+
+
+	less:
+		less
+		less-loader
+-------------------------------------------------
+按需加载相应组件:	√
+	就需要 按钮
+1. babel-plugin-component
+	cnpm install babel-plugin-component -D
+2. .babelrc文件里面新增一个配置
+	  "plugins": [["component", [
+	    {
+	      "libraryName": "element-ui",
+	      "styleLibraryName": "theme-default"
+	    }
+	  ]]]
+3. 想用哪个组件就用哪个
+	引入:
+		import {Button,Radio} from 'element-ui'
+	使用:
+		a). Vue.component(Button.name, Button);  个人不太喜欢
+		b). Vue.use(Button);   √
+---------------------------------------------------
+发送请求:
+	vue-resourse		交互
+
+	axios
+---------------------------------------------------
+element-ui    ->  pc
+
+mint-ui
+	移动端 ui库
+
+	http://mint-ui.github.io/
+
+1. 下载
+	npm install mint-ui -S
+
+	-S
+	--save
+2. 引入
+	import Vue from 'vue';
+	import Mint from 'mint-ui';
+	import 'mint-ui/lib/style.css'
+	Vue.use(Mint);
+
+	按需引入:
+	import { Cell, Checklist } from 'minu-ui';
+	Vue.component(Cell.name, Cell);
+	Vue.component(Checklist.name, Checklist);
+
+http://mint-ui.github.io/docs/#!/zh-cn2
+
+论坛:
+	
+-------------------------------------------------------
+
+Mint-ui-demo:  看着手册走了一遍
+
+https://github.com/itstrive/striveCode/tree/js/vue2.0-Mint-ui-demo
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

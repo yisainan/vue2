@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+  <style>
+    .red {
+      color: red;
+    }
+    .bg {
+      background-color: green;
+    }
+  </style>  
+</head>
+<body>
+  <div id="app">
+    <!--
+        v-bind:class 处理样式更灵活
+        v-bind:class= "{active: isActive}" 对象的时候，如果isActive数据的值是true，样式中会增加active
+
+        v-bind:class=数组   可以绑定到多个数据，[cls, aa]  class中会增加cls数据和aa的值
+    -->
+    <div class="red" v-bind:class="{active: isActive}">{{title}}</div>
+
+    <div class="red" v-bind:class="[cls, aa]">{{title}}</div>
+
+    <div class="red" v-bind:class="[cls, {active: isActive}]">{{title}}</div>
+    
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        title: '这是一个div',
+        cls: 'bg',
+        hasBG: true,
+        isActive: true,
+        aa: 'light'
+      }
+    });
+  </script>
+</body>
+</html>

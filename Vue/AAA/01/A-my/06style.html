@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    </style>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!-- 总结：注意这里的写法。:style后面是 数组，data中是 对象名：对象 -->
+<div id="app">
+    <span :style="[a,b]">123123</span>
+</div>
+</body>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                a:{color:'red',background:'blue'},
+                b:{fontSize:'28px'}
+            }
+        })
+    }
+</script>
+</html>

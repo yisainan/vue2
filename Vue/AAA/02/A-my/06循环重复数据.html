@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结： push方法使用
+         vue1.0中  这两种写法只会添加一次！！！！
+         vue2.0中   这两种写法会重复的添加！！！！
+   -->
+
+
+<!--<div id="app">
+    <input type="button" value="点击" v-on:click='add'/>
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+               arr:[1,2,3]
+            },
+            methods:{
+                add(){
+                  this.arr.push(4);
+               }
+            }
+        })
+    }
+</script>-->
+
+<div id="app">
+    <input type="button" value="点击" v-on:click='add()'/>
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
+</div>
+<script>
+    var vm=new Vue({
+        data:{
+            arr:['apple','pear','orange']
+        },
+        methods:{
+            add:function(){
+                this.arr.push('tomato');
+            }
+        }
+    }).$mount('#app');
+
+</script>
+</body>
+</html>

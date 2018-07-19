@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+     <div :style="{width:'200px',height:'200px',background:'#ccc'}" @contextmenu='show($event)'></div>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                show(e){
+                   alert('呵呵');
+                  // e.preventDefault();     方式1
+                    e.returnValue = false;
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

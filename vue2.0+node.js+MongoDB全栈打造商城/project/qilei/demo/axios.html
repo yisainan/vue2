@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script src="../node_modules/axios/dist/axios.js"></script>
+</head>
+<body>
+<div id="app" class="container">
+  <h1>axios插件讲解</h1>
+  <a href="javascript:;" class="btn btn-primary" v-on:click="get">Get请求</a>
+  <a href="javascript:;" class="btn btn-primary" @click="post">Post请求</a>
+  <a href="javascript:;" class="btn btn-primary" @click="http">http</a>
+  <div>
+    <span>{{msg}}</span>
+  </div>
+</div>
+<script>
+  new Vue({
+    el:"#app",
+    data:{
+      msg:''
+    },
+    mounted: function () {
+      axios.interceptors.request.use(function (config) {
+        console.log("request init.");
+
+        return config;
+      })
+      axios.interceptors.response.use(function (response) {
+        console.log("response init.");
+        return response;
+      })
+    },
+    methods:{
+      get: function () {
+        axios.get("../package1.json",{
+          params:{
+            userId:"999"
+          },
+          headers:{
+            token:"jack"
+          }
+        }).then(res=>{
+          this.msg = res.data;
+        }).catch(function (error) {
+          console.log("error init."+error)
+        });
+      },
+      post: function () {
+        axios.post("../package.json",{
+          userId:"888"
+        },{
+          headers:{
+            token:"tom"
+          }
+        }).then(res=>{
+          this.msg = res.data;
+        }).catch(function (error) {
+
+        })
+      },
+      http: function () {
+        axios({
+          url:"../package.json",
+          method:"get",
+          data:{
+            userId:"101"
+          },
+          params:{
+            userId:"102"
+          },
+          headers:{
+            token:"http-test"
+          }
+        }).then(res=>{
+          this.msg = res.data;
+        })
+      }
+    }
+  });
+</script>
+</body>
+</html>

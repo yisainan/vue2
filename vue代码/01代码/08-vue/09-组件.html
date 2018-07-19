@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <my-item></my-item>
+      <my-item></my-item>
+      <my-item></my-item>
+      <my-item></my-item>
+    </ul>
+  </div>
+
+
+  <div id="app1">
+
+    <ul>
+      <my-item></my-item>
+      <my-item></my-item>
+    </ul>
+  </div>
+
+  <script>
+     
+
+    //全局组件  -- 组件中的data 必须是一个方法
+
+    Vue.component('my-item', {
+      // data:function () { 
+      //   return {
+      //     count: 0
+      //   }
+      // },
+      data() {
+        return {
+          count: 0
+        }
+      },
+      template: '<li @click="count += 1">这是一项数据 {{count}}</li>'
+    })
+
+
+    var vm = new Vue({
+      el: '#app'
+     
+    }) 
+
+
+    var vm1 = new Vue({
+      el: '#app1'
+    })
+
+
+
+  </script>
+</body>
+</html>

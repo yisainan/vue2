@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+  <script src="vue-resource.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="btnGet">获取评论</button>
+
+    <ul>
+      <li v-for="item in comments">{{item.content}}</li>
+    </ul>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        comments: []
+      },
+      methods: {
+        btnGet() {
+          var url = 'http://127.0.0.1:8899/api/getcomments/43?pageindex=1';
+          //发送请求
+          this.$http.get(url).then(function(response) {
+            // console.log(response);
+            // console.log(response.body);
+
+            //我们获取的数据  response.body
+            this.comments = response.body.message;
+
+          }, function() {
+            console.log('获取数据失败');
+          })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

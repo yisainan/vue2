@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <my-title></my-title>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+       
+      },
+      //私有组件
+      components: {
+        'my-title': {
+          data() {
+            return {
+              msg: '我是大标题'
+            }
+          },
+          template: '<h1>{{msg}}</h1>'
+        }
+      }
+    });
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+	</div>
+
+	<script>
+
+		var Aaa=Vue.extend({
+			template:'<h3>我是标题3</h3>'
+		});
+		/*这里的Aaa可以认为是一个类*/
+		console.log(Aaa);/*function VueComponent(options) { this._init(options) }*/
+
+		var a=new Aaa();/*这里的a可以；类比下面的vm实例*/
+		console.log(a);/*VueComponent*/
+
+
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				bSign:true
+			}
+		});
+
+	</script>
+</body>
+</html>

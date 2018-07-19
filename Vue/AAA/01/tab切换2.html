@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue项目</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+    <style>
+        #list{
+            winth:600px;
+            height:50px;
+        }
+        #list li{
+            width:100px;
+            height:50px;
+            margin:0 5px;
+            background:red;
+            float:left;
+            list-style:none;
+            text-align:center;
+            line-height:50px;
+        }
+        div.content{
+            width:200px;
+            height:200px;
+            background:yellow;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div id="app_head">
+    <ul id='list'>
+        <li v-for="i in todos" v-on:click="fn1($index)" index='{{$index}}'>{{i.text}}</li>
+    </ul>
+    <div class='content'>123</div>
+    <div class='content'>23</div>
+    <div class='content'>3</div>
+</div>
+<script>
+    new Vue({
+        el:'#app_head',//元素
+        data:{//数据
+            todos: [
+                { text: '首页' },
+                { text: '新闻资讯' },
+                { text: '产品展示' },
+                { text: '关于我们' },
+                { text: '联系我们' }
+            ],
+            fn1:function($index){
+                $('.content').css('display','none');
+                $('.content').eq($index).css('display','block');
+            }
+        }
+    });
+
+    $('.content').eq(0).css('display','block');
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../../node_modules/vue/dist/vue.js"></script>
+  <script src="../../node_modules/vue-router/dist/vue-router.js"></script>
+  <script src="../../node_modules/vuex/dist/vuex.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>Hello App!</h1>
+  <router-link :to="{path:'/home'}">home</router-link>
+  <router-link to="/admin">admin</router-link>
+  <router-view></router-view>
+</div>
+
+<script>
+  const home = {
+    template:'<div>我是主页<router-view></router-view></div>'
+  };
+  const admin = {
+    template:`<div>这是嵌套页面<router-view></router-view></div>`
+  };
+  const index = {
+    template:'<div>这是主页子路由页面</div>'
+  };
+  const profile = {
+    template:`<div>这是用户信息子路由页面:</div>`
+  };
+  const routes = [
+    {
+      path: '/home',
+      component: home ,
+      children:[
+        {
+          path: 'index',
+          component: index
+        }
+      ]
+    },
+    {
+      path: '/admin/:userId',
+      component: admin,
+      children:[
+        {
+          path: 'profile',
+          component: profile
+        }
+      ]
+    }
+  ]
+  var router = new VueRouter({
+    routes:routes
+  });
+  new Vue({
+    el:"#app",
+    router:router
+
+  });
+</script>
+</body>
+</html>

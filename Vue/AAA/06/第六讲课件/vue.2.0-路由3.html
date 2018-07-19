@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+        .router-link-active{
+            font-size: 20px;
+            color:#f60;
+        }
+    </style>
+    <script src="vue.js"></script>
+    <script src="bower_components/vue-router/dist/vue-router.min.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <router-link to="/home">主页</router-link>
+            <router-link to="/user">用户</router-link>
+        </div>
+        <div>
+            <router-view></router-view>
+        </div>
+    </div>
+
+    <script>
+        //组件
+        var Home={
+            template:'<h3>我是主页</h3>'
+        };
+        var User={
+            template:`
+                <div>
+                    <h3>我是用户信息</h3>
+                    <ul>
+                        <li><router-link to="/user/username">某个用户</router-link></li>
+                    </ul>
+                    <div>
+                        <router-view></router-view>
+                    </div>
+                </div>
+            `
+        };
+        var UserDetail={
+            template:'<div>我是XX用户</div>'
+        };
+
+        //配置路由
+        const routes=[
+            {path:'/home', component:Home},
+            {
+                path:'/user',
+                component:User,
+                children:[
+                    {path:'username', component:UserDetail}
+                ]
+            },
+            {path:'*', redirect:'/home'}  //404
+        ];
+
+        //生成路由实例
+        const router=new VueRouter({
+            routes
+        });
+
+
+        //最后挂到vue上
+        new Vue({
+            router,
+            el:'#box'
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

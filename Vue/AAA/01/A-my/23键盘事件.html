@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--总结： 记住@keyup.13 和 @keyup.enter 这两种写法-->
+<div id="app">
+    <!--<input type='text' @keyup.13='show($event)'/>-->
+    <input type='text' @keyup.enter='show($event)'/>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                show(e){
+                   alert('您点的回车');
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

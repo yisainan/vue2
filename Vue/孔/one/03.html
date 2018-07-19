@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+	<style>
+
+	</style>
+</head>
+<body>
+   <div id="app">
+    <!-- 输入其他的框就会同步的发生改变 -->
+    <input type="text" name="" v-model='msg'><br/>
+    <!-- 输入后触发onchange事件，其他的也跟着改变（首部加了空格，不会省略） -->
+    <input type="text" name="" v-model.lazy='msg'><br/>
+    <!-- 输入后会去掉前后的空格 -->
+    <input type="text" name="" v-model.trim='msg'><br/>
+    <!-- 支持链式操作  具有如上的两个特性-->
+    <input type="text" name="" v-model.lazy.trim='msg'><br/>
+       <div>{{msg}}</div>
+   </div>
+<script>
+   //总结：双向数据绑定
+   // 对象里面也是用 ： 低级
+   //双向数据绑定就是用的 v-model=
+   //修饰符，在v-model后面加上.lazy,就等于监听onchange事件了
+   //
+   //
+   var foo = new Vue({
+   	   el:"#app",
+       data: {
+        	msg:''
+       }
+   })
+
+
+</script>
+</body>
+</html>

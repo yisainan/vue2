@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{msg | toUpper}}
+  </div>
+
+  <div id="app1">
+    {{msg1 | toUpper}}
+  </div>
+
+  <script>
+    //全局过滤器
+    Vue.filter('toUpper', function(input) {
+      return input.toUpperCase();
+    })
+
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello World'
+      }
+    });
+
+    var vm1 = new Vue({
+      el: '#app1',
+      data: {
+        msg1: 'Hello World'
+      }
+    });
+  </script>
+</body>
+</html>

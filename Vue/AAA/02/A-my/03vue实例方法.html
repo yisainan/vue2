@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<!--总结：重点就是vm.$el   vm.$data的使用-->
+<div id="app">{{a}}</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                a:1,
+                b:2
+            }
+        })
+        vm.$el.style.background = 'red';
+        alert(vm.$data.b);
+    }
+</script>
+</body>
+</html>

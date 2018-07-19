@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社——http://www.zhinengshe.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <script>
+        //<h2>welcome</h2>
+        Vue.filter('filterHtml',{
+            read:function(input){ //model-view
+                alert(1);
+                return input.replace(/<[^<]+>/g,'');
+            },
+            write:function(val){ //view -> model
+                console.log(val);
+                return val;
+            }
+        });
+        window.onload=function(){
+            var vm=new Vue({
+                data:{
+                    msg:'<strong>welcome</strong>'
+                }
+            }).$mount('#box');
+        };
+
+    </script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="msg | filterHtml">
+        <br>
+        {{{msg}}}
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

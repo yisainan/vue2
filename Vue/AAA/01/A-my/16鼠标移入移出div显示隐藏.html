@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='vue.js'></script>
+</head>
+<body>
+<div id="app">
+    <input type='button' v-show='a'/>
+    <div :style='[aa,bb]' @mouseover='a=false' @mouseout='a=true'></div>
+</div>
+<script>
+    window.onload = function(){
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                aa:{color:'red'},
+                bb:{background:'yellow',width:'300px',height:'300px'},
+                a:true
+
+            }
+        })
+    }
+</script>
+</body>
+</html>

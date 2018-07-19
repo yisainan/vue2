@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in names">{{item}} -- {{index}}</li>
+    </ul>
+
+
+    <ul>
+      <li v-for="(value, key, index) in user" v-bind:key="index">
+        {{value}} -- {{key}}  -- {{index}}
+      </li>
+    </ul>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        names: ['西施', '貂蝉', '美丽', '凤姐'],
+        user: {name: 'lz', age: 88, salary: 100}
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="vue.min.js"></script>
+  <script src="vue-router.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--<a href="#/news">新闻资讯</a>
+    <a href="#/share">图片分享</a>-->
+
+    <router-link to="/news">新闻资讯</router-link>
+    <router-link to="/share">图片分享</router-link>
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+
+  </div>
+
+  <script>
+    //组件  新闻资讯
+    var news = Vue.component('my-news', {
+      template: '<p>我是新闻资讯列表</p>'
+    })
+
+    //组件  图片分享
+    var share = Vue.component('my-share', {
+      template: '<p>我是图片分享的列表</p>'
+    })
+
+    //创建路由
+    var router = new VueRouter({
+      routes: [
+        {name: 'news', path: '/news', component: news},
+        {name: 'share', path: '/share', component: share}
+      ]
+    })
+
+    var vm = new Vue({
+      el: '#app',
+      //使用路由对象
+      router: router
+    })
+  </script>
+</body>
+</html>

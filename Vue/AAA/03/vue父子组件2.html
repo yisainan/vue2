@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<aaa>
+		</aaa>
+	</div>
+
+	<script>
+		var vm=new Vue({
+			el:'#box',
+			data:{
+				a:'aaa'
+			},
+			components:{
+				'aaa':{
+					data(){
+						return {
+							msg:'我是父组件的数据'
+						}
+					},
+					template:'<h2>我是aaa组件--{{msg}}</h2><bbb></bbb>',
+					components:{
+						'bbb':{
+// 默认情况下，子组件无法访问父组件的数据
+							template:'<h3>我是bbb组件->{{msg}}</h3>'
+						}
+					}
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

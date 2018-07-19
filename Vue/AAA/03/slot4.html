@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+<div id="box">
+    <aaa>
+        <ul>
+            <li>1111</li>
+            <li>2222</li>
+            <li>3333</li>
+        </ul>
+        <ol>
+            <li>111</li>
+            <li>222</li>
+            <li>333</li>
+        </ol>
+    </aaa>
+    <hr>
+    <aaa>
+    </aaa>
+</div>
+<!--这是不想看到的：每一个slot都是给aaa中的所有内容占位-->
+<template id="aaa">
+    <h1>xxxx</h1>
+    <slot>这是默认的情况</slot>
+    <p>welcome vue</p>
+    <slot>这是默认的情况2</slot>
+</template>
+
+<script>
+    var vm=new Vue({
+        el:'#box',
+        data:{
+            a:'aaa'
+        },
+        components:{
+            'aaa':{
+                template:'#aaa'
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

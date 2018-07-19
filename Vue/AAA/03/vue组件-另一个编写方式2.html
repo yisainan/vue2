@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="bower_components/vue/dist/vue.js"></script>
+	<style>
+	</style>
+</head>
+<body>
+	<div id="box">
+		<my-aaa></my-aaa>
+	</div>
+
+	<script>
+		/*局部*/
+		var vm=new Vue({
+			el:'#box',
+			components:{
+				'my-aaa':{
+					data(){
+						return {
+							msg:'welcome vue'
+						}
+					},
+					methods:{
+						change(){
+							this.msg='changed';
+						}
+					},
+					template:'<h2 @click="change">标题2->{{msg}}</h2>'
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>
