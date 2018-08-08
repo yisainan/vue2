@@ -5,9 +5,9 @@
         <ul>
           <li v-for="(item,index) in goods" class="menu-item" :class="{'current':currentIndex===index}"
               @click="selectMenu(index,$event)">
-          <span class="text border-1px">
-            <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
-          </span>
+            <span class="text border-1px">
+              <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span>{{item.name}}
+            </span>
           </li>
         </ul>
       </div>
@@ -98,6 +98,7 @@
         response = response.body;
         if (response.errno === ERR_OK) {
           this.goods = response.data;
+          console.log(this.goods);
           this.$nextTick(() => {
             this._initScroll();
             this._calculateHeight();
