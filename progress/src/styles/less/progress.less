@@ -1,0 +1,137 @@
+.@{css-prefix}progress {
+  position: relative;
+  line-height: 1;
+
+  &__text {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	font-size: 14px;
+	color: @text-color;
+	line-height: 1;
+  }
+
+  &--circle {
+	display: inline-block;
+
+	.vm-progress__text {
+	  position: absolute;
+	  top: 50%;
+	  left: 0;
+	  width: 100%;
+	  margin: 0;
+	  text-align: center;
+	  transform: translate(0, -50%);
+
+	  i {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 22px;
+		font-weight: bold;
+	  }
+	}
+  }
+
+  &.is-success {
+	.vm-progress-bar__inner {
+	  background-color: @progress-success-color;
+	}
+	.vm-progress__text {
+	  color: @progress-success-color;
+	}
+  }
+
+  &.is-exception {
+	.vm-progress-bar__inner {
+	  background-color: @progress-danger-color;
+	}
+	.vm-progress__text {
+	  color: @progress-danger-color;
+	}
+  }
+
+  &.is-warning {
+	.vm-progress-bar__inner {
+	  background-color: @progress-warning-color;
+	}
+	.vm-progress__text {
+	  color: @progress-warning-color;
+	}
+  }
+
+  &.is-info {
+	.vm-progress-bar__inner {
+	  background-color: @progress-info-color;
+	}
+	.vm-progress__text {
+	  color: @progress-info-color;
+	}
+  }
+
+
+  &--without-text {
+	.vm-progress__text {
+	  display: none;
+	}
+	.vm-progress-bar {
+	  padding-right: 0;
+	  margin-right: 0;
+	  display: block;
+	}
+  }
+
+  &--text-inside {
+	.vm-progress-bar {
+	  padding-right: 0;
+	  margin-right: 0;
+	}
+  }
+  &-bar {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	padding-right: 50px;
+	margin-right: -55px;
+	box-sizing: border-box;
+	&__outer {
+	  position: relative;
+	  height: 6px;
+	  background-color: @bg-color;
+	  border-radius: 100px;
+	  vertical-align: middle;
+	  overflow: hidden;
+	}
+	&__inner {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  height: 100%;
+	  line-height: 1;
+	  text-align: right;
+	  background-color: @progress-primary-color;
+	  border-radius: 100px;
+	}
+	&__innerText {
+	  display: inline-block;
+	  vertical-align: middle;
+	  color: @progress-white-color;
+	  font-size: 12px;
+	  margin: 0 5px;
+	  white-space: nowrap;
+	}
+	&__striped {
+	  background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+	  background-size: 40px 40px;
+	  animation: progress-bar-stripes 2s linear infinite
+	}
+  }
+}
+@keyframes progress-bar-stripes {
+  from {
+	background-position: 40px 0
+  }
+
+  to {
+	background-position: 0 0
+  }
+}

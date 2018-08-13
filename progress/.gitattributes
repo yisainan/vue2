@@ -1,0 +1,4 @@
+**/*.js linguist-language=Vue
+**/*.less linguist-language=Vue
+**/*.css linguist-language=Vue
+**/*.html linguist-language=Vue
