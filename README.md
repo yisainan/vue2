@@ -3,6 +3,16 @@ vue相关精品demo
 
 > Vue projects
 
+## Knowledge
+
+``` bash
+# vue-music
+1.Charles抓包使用方法（iphone和安卓进行代理抓包）
+2.vConsole的使用
+3.搜索节流
+4.
+
+
 ## Build Setup
 
 ``` bash
