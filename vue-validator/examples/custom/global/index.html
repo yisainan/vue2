@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>custom validator global registration example</title>
+    <script src="../../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../../dist/vue-validator.js"></script>
+    <style>
+      input.invalid { border-color: red; }
+      .errors { color: red; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <form novalidate>
+        <label>Email:</label> 
+        <validity ref="validity" field="email" v-model="validation" :validators="['email']">
+          <input type="text" @input="$refs.validity.validate()">
+        </validity>
+        <div class="errors">
+          <p class="email" v-if="validation.result.email">{{validation.result.email}}</p>
+        </div>
+        <input type="submit" value="send" v-if="validation.result.valid">
+      </form>
+    </div>
+    <script>
+      // `email` custom validator is global registration
+      Vue.validator('email', {
+        check: function (val) {
+          return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(val)
+        },
+        message: 'Invalid your mail addres format.'
+      })
+
+      new Vue({
+        data: {
+          validation: {
+            result: {} 
+          }
+        }
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

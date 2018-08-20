@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>multiple select validation example</title>
+    <script src="../../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../../dist/vue-validator.js"></script>
+    <style>
+      select.invalid { border-color: red; }
+      .errors { color: red; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <label for="language">select your favorite programming languages</label><br />
+      <validity ref="validity" field="lang" v-model="validation" :validators="{ required: true, maxlength: 3 }">
+        <select multiple size="10" @change="$refs.validity.validate()">
+          <option value="javascript">JavaScript</option>
+          <option value="ruby">Ruby</option>
+          <option value="python">Python</option>
+          <option value="perl">Perl</option>
+          <option value="lua">Lua</option>
+          <option value="go">Go</option>
+          <option value="rust">Rust</option>
+          <option value="elixir">Elixir</option>
+          <option value="c">C</option>
+          <option value="none">Not a nothing here</option>
+        </select>
+      </validity>
+      <div class="errors">
+        <p class="required" v-if="validation.result.required">Required !!</p>
+        <p class="maxlength" v-if="validation.result.maxlength">Sorry, The maximum is 3 languages !!</p>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        data: {
+          validation: {
+            result: {}
+          }
+        }
+      }).$mount('#app')
+    </script>
+  </body>
+</html>

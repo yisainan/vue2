@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>validation glocal classes example</title>
+    <script src="../../../node_modules/vue/dist/vue.js"></script>
+    <script src="../../../dist/vue-validator.js"></script>
+    <style>
+      input.invalid { border-color: red; }
+      .errors { color: red; }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <label for="username">username:</label>
+      <validity field="username" 
+                v-model="validation" 
+                :classes="{ touched: 'touched-local', dirty: 'dirty-local' }" 
+                :validators="{ required: { message: 'required you name !!' } }">
+        <input id="username" 
+               type="text"
+               ref="username" 
+               @focusin="handleValidation" 
+               @input="handleValidation">
+      </validity>
+      <div class="errors">
+        <p v-if="validation.result.required">{{validation.result.required}}</p>
+      </div>
+      <p>classes: {{usernameClasses}}</p>
+    </div>
+    <script>
+      // validation global classses setting
+      Vue.config.validator.classes = {
+        valid: 'valid-global'
+      }
+
+      new Vue({
+        data: {
+          validation: {
+            result: {}
+          },
+          usernameClasses: ''
+        },
+        methods: {
+          handleValidation: function (e) {
+            var self = this
+            var username = this.$refs.username
+            var $validity = e.target.$validity
+            $validity.validate(function () {
+              self.usernameClasses = username.className
+            })
+          }
+        }
+      }).$mount('#app')
+    </script>
+  </body>
+</html>
