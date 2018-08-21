@@ -6,7 +6,7 @@ vue相关精品demo
 ## Knowledge
 
 ``` bash
-# vue-music
+# 一、vue-music 音乐项目
 1.Charles抓包使用方法（iphone和安卓进行代理抓包）
 2.vConsole的使用
 3.搜索节流
@@ -14,11 +14,20 @@ vue相关精品demo
 5.mixins的使用
 6.vuex的使用
 
-# vue2-elm
+# 二、vue2-elm 饿了么
 1.定位
 2.搜索
 3.筛选
 4.
+
+# 三、vue-sell 饿了么轻量版
+1.better-scroll
+2.
+
+# 四、vue-awesome-swiper 轮播（可查看example）
+
+# 五、vue基础代码
+
 
 ## Build Setup
 
