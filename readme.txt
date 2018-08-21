@@ -1,5 +1,5 @@
 
+vue-music
+Charles 抓包使用方法（iphone和安卓进行代理抓包）
 
-Charles ץ��ʹ�÷�����iphone�Ͱ�׿���д���ץ����
-
-vConsole��ʹ�ã���
+vConsole的使用！！
