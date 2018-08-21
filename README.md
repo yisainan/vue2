@@ -5,7 +5,7 @@ vue相关精品demo
 
 ## Knowledge
 
-``` bash
+```
 # 一、vue-music 音乐项目
 1.Charles抓包使用方法（iphone和安卓进行代理抓包）
 2.vConsole的使用
@@ -28,24 +28,20 @@ vue相关精品demo
 
 # 五、vue基础代码
 
+# 六、vue2-happyfri 答题项目，答完评分
 
-## Build Setup
+# 七、vue2.0+node.js+MongoDB全栈打造商城  商城PC版
 
-``` bash
-# cd project
-cd project
 
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Deleted
+```
+# 一、NeteaseCloudWebApp 仿网易云音乐，功能不完善
+
+# 二、progress 较好的进度组件，已经star
+
+# 三、vue-slider 滑动删除，已被mint ui组件代替
+
+
+```
