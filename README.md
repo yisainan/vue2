@@ -11,8 +11,9 @@ vue相关精品demo
 2.vConsole的使用
 3.搜索节流
 4.抓取QQ音乐接口数据
-5.mixins的使用
+5.mixins减少代码冗余
 6.vuex的使用
+7.路由懒加载（减小app.js体积）
 
 # 二、vue2-elm 饿了么
 https://github.com/bailicangdu/vue2-elm
@@ -38,7 +39,18 @@ https://github.com/bailicangdu/vue2-happyfri
 
 # 七、vue2.0+node.js+MongoDB全栈打造商城  商城PC版
 
+# 八、vue2.0-taopiaopiao 淘票票的全栈demo
+https://github.com/canfoo/vue2.0-taopiaopiao
+运行有问题
 
+# 九、vue2-demo  从零构建vue2 + vue-router + vuex 开发环境到入门，实现基本的登录退出功能
+https://github.com/lzxb/vue2-demo
+
+# 十、vue2.x-douban  Vue2.0实现简易豆瓣电影webApp
+https://github.com/superman66/vue2.x-douban
+
+# 十一、vuejs2-learn  vuejs2 官网讲解
+https://github.com/bhnddowinf/vuejs2-learn
 ```
 ## Deleted
 ```
