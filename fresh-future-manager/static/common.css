@@ -1,0 +1,59 @@
+body{
+	font-size:12px;
+	padding:0;margin:0;
+}
+form{
+	margin:30px 0 0 0;
+	padding:10px;
+}
+#header-nav{
+	position:fixed;
+	margin:0;
+	padding:0;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:9999;
+	background:#F4F4F4;
+	border-bottom:1px solid #999;
+	line-height:normal;
+	_position: absolute;
+	_top: expression(eval(TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop));
+}
+*html{background:url(about:blank) fixed;}
+#header-nav ul{
+	margin:0;
+	padding:10px 5px 0 12px;
+	list-style:none;
+}
+#header-nav li{
+	float:left;
+	margin:0;
+	padding:0;
+}
+#header-nav a{
+	display:block;
+	background:url("img/tabbgl.gif") no-repeat left top;
+	margin:0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+}
+#header-nav span{
+	float:left;
+	display:block;
+	background:url("img/tabbgr.gif") no-repeat right top;
+	padding:5px 9px 2px 5px;
+	color:#666;
+}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#header-nav a span {float:none;}
+/* End IE5-Mac hack */
+#header-nav a:hover span{
+	color:#FFF;
+}
+#header-nav a:hover{
+	background-position:0% -42px;
+}
+#header-nav a:hover span{
+	background-position:100% -42px;
+}
