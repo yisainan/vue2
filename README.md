@@ -1,5 +1,4 @@
-# vue
-vue相关精品demo
+## 点个star 收藏一下岂不是更好😆！
 
 ### BaseCode
 > vue基础代码--个人学习代码
