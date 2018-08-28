@@ -1,0 +1,54 @@
+/*body {
+    font-family:"微软雅黑"
+}*/
+
+img { max-width: 100%; }
+.clear { clear: both; }
+.yqxtsdkn { background: #0B2E4C; height: 30px; clear: both; text-align: center; }
+    .yqxtsdkn::after { content: "一起探索生命的更多可能..."; line-height: 30px; font-size: 12px; color: #efefef; }
+.mui-slider-indicator .mui-indicator { width: 4px;
+    height: 4px;}
+
+.no-content { text-align: center; padding-top: 120px; }
+    .no-content h4 { color: #808080; }
+.mui-loading { padding-top: 120px;  opacity: 0; transition: opacity 1s;}
+
+.fade-enter-active, .fade-leave-active { transition: opacity .4s; }
+    .fade-enter, .fade-leave-active { opacity: 0; }
+
+/*个人中心*/
+.mypage { background: #fff; }
+    .mypage h4 { color: #37536D; padding: 20px 15px 10px 15px; margin: 0; background: #fff; font-size: 14px;}
+.top { width: 100%; padding: 20px 0; background: #0B2E4C; text-align: center; }
+    .top > p { width: 30%; margin: 0 auto 20px auto; letter-spacing: 5px; font-size: 28px; color: #fff; height: 50px; line-height: 50px; text-align: center; border: 1px solid #fff; border-radius: 5px; }
+    .top > span { color: #fff; font-size: 38px; }
+.page { background: #fff; }
+
+.mypage .cz { background: url(./cz.png) no-repeat 20px center; }
+.mypage .tx { background: url(./tx.png) no-repeat 20px center; }
+
+.rf { float: right; }
+.lf { float: left; }
+.top_03 ul { list-style: none; }
+.introl { background: #fff; }
+.top_03 ul li { display: inline-block; color: #fff; font-size: 30px;width: 49%; text-align: left; }
+.top_03 ul li.border::after{content: '';position:absolute;width: 1px;height: 60px;background: #385166;top:30px;left: 50%;}
+    .top_03 ul li:first-letter { font-size: 50px;float: left;padding-top:8px }
+    .top_03 ul li span { font-size: 12px;float: left;margin-left:3px ;letter-spacing:2px; }
+    .top_03 small {
+        font-size: 12px;
+        position: relative;
+        top: 5px;
+        left: 3px;
+        vertical-align: bottom
+    }
+.my_ol, .introl > p { font-size: 12px; width: 90%; color: #8D8C8D; margin: 0 auto; padding: 0 0 15px 15px; border-bottom: 2px solid #3A566F; }
+.my_ul { list-style: none; padding: 0; margin: 0; background: #fff; }
+    .my_ul li { padding: 3px 20px; border-bottom: 1px solid #ddd; font-size: 14px; color: #555; }
+        .my_ul li span { color: #ccc; font-size: 12px; }
+        .my_ul li a { color: #555; font-size: 24px; margin-top: -15px; }
+
+/*新布局*/
+.fbjbox { height: 100%; display: table;width: 100%; }
+.fbjbox1 { display: table-row; }
+.fbjbox2 { height: 100%; display: table-row;}

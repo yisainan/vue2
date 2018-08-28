@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <form action="http://pay.laikeduo.com/zmwxpay/wxpay.php" method="post" id="form1">
+        <!-- 此处就使用表单提交的方式传递参数要不然会出问题 -->
+        <input name="d" id="data" type="text" />
+        <div align="center">
+            <button type="submit" style="width:210px; height:50px; border-radius: 15px;background-color:#FE6714; border:0px #FE6714 solid; cursor: pointer;  color:white;  font-size:16px;">确认支付</button>
+        </div>
+    </form>
+    <script src="./js/mui.min.js"></script>
+    <script>
+        //function getQueryString(name) {
+        //    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        //    var r = window.location.search.substr(1).match(reg);
+        //    if (r != null) return unescape(r[2]); return null;
+        //}
+        function getUrlArgObject() {
+            var args = new Object();
+            var query = location.search.substring(1);//获取查询串  
+            var pairs = query.split(",");//在逗号处断开  
+            for (var i = 0; i < pairs.length; i++) {
+                var pos = pairs[i].indexOf('=');//查找name=value  
+                if (pos == -1) {//如果没有找到就跳过  
+                    continue;
+                }
+                var argname = pairs[i].substring(0, pos);//提取name  
+                var value = pairs[i].substring(pos + 1);//提取value  
+                args[argname] = decodeURI(value);//存为属性  
+            }
+            return args;//返回对象  
+        }
+        //alert(JSON.stringify(getUrlArgObject()))
+
+        var data = getUrlArgObject();
+        data.wherePay = 1;
+        mui.post("http://ybswx.yunliplus.com/index.php/Pay/index", data, function (db) {
+            document.getElementById("data").value = JSON.stringify(db.data);
+            document.getElementById("form1").submit();
+        }, "json")
+    </script>
+</body>
+
+</html>
