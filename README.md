@@ -101,20 +101,20 @@
   知识点：
        1.
 
- 十二、progress
-   描述：较好的进度组件
-   评价：较好的进度组件
+十二、progress
+ 描述：较好的进度组件
+ 评价：较好的进度组件
 
- 十三、vue-slider
-   描述：滑动删除
-   评价：已被mint ui组件代替
+十三、vue-slider
+ 描述：滑动删除
+ 评价：已被mint ui组件代替
 
- 十四、vue-video-player
-   描述：视频播放
-   评价：比较好
+十四、vue-video-player
+ 描述：视频播放
+ 评价：比较好
 
- 十五、NeteaseCloudWebApp
-   描述：仿网易云音乐
-   评价：功能不完善
+十五、NeteaseCloudWebApp
+ 描述：仿网易云音乐
+ 评价：功能不完善
 
 ```
