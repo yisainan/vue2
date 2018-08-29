@@ -24,7 +24,8 @@
 三、vue-sell 饿了么轻量版
   https://github.com/ustbhuangyi/vue-sell
   1.better-scroll
-  2.
+  2.node prod.server.js 开启本地服务
+  3.config=>index.js=>productionSourceMap属性（本地调试）  上线时应设为false
 
 四、vue-awesome-swiper 轮播（可查看example）
   https://github.com/surmon-china/vue-awesome-swiper
