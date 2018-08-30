@@ -28,7 +28,7 @@
   * vue-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
   * vue-sell : 链接:https://pan.baidu.com/s/1ctm3kEs3DzNLnVWHBXGjcA  密码:phhz
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
-  
+
 * 项目说明
 ```
 一、vue-music
@@ -120,5 +120,10 @@
 十五、NeteaseCloudWebApp
  描述：仿网易云音乐
  评价：功能不完善
+
+Vue-cnodejs
+描述：侧滑登录及切换内容
+
+
 
 ```
