@@ -1,7 +1,0 @@
-AMD是个概念，异步模块定义，requireJS是实现，依赖前置（类比，ECMAscript是概念，javascript的实现）
-
-CMD是个概念，同步模块定义，seaJS是实现，淘宝开发的，一来就近
-
-commonjs对应module.exports,nodejs就是遵循的这个规范，是服务端使用的
-
-ES6是
