@@ -9,7 +9,6 @@
 
 * 项目地址
   * vue-music : https://github.com/qiilee/vue/tree/master/vue-music
-  * vue2-elm : https://github.com/bailicangdu/vue2-elm
   * vue-sell : https://github.com/ustbhuangyi/vue-sell
   * vue-awesome-swiper : https://github.com/surmon-china/vue-awesome-swiper
   * vuex : https://github.com/vuejs/vuex
