@@ -12,7 +12,6 @@
   * vue-sell : https://github.com/ustbhuangyi/vue-sell
   * vue-awesome-swiper : https://github.com/surmon-china/vue-awesome-swiper
   * vue2.0+node.js+MongoDB : https://github.com/qiilee/vue/tree/master/vue2.0%2Bnode.js%2BMongoDB%E5%85%A8%E6%A0%88%E6%89%93%E9%80%A0%E5%95%86%E5%9F%8E
-  * vue2.0-taopiaopiao :  https://github.com/canfoo/vue2.0-taopiaopiao
   * vue2-demo : https://github.com/lzxb/vue2-demo
   * vuejs2-learn : https://github.com/bhnddowinf/vuejs2-learn
   * NeteaseCloudWebApp : https://github.com/javaSwing/NeteaseCloudWebApp
