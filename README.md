@@ -96,8 +96,6 @@
 十一、vuejs2-learn
   描述：vuejs2 官网讲解
   评价：
-  知识点：
-       1.
 
 十二、progress
  描述：较好的进度组件
