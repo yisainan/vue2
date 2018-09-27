@@ -1,0 +1,26 @@
+{
+  "name": "frame-animation",
+  "version": "0.2.6",
+  "description": "a common animation lib",
+  "scripts": {
+    "dev": "webpack-dev-server --port 9090 --inline --hot --content-base ./demo --host 0.0.0.0",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "main": "build/animation.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ustbhuangyi/animation.git"
+  },
+  "keywords": [
+    "common",
+    "frame",
+    "animation",
+    "h5"
+  ],
+  "author": "ustbhuangyi",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
