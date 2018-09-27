@@ -1,0 +1,8 @@
+{
+  "errorCode" : {
+    "500": "/errorPage?code=500",
+    "404": "/errorPage?code=404",
+    "403": "/errorPage?code=403",
+    "401": "/errorPage?code=401"
+  }
+}

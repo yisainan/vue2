@@ -1,0 +1,34 @@
+{
+    "request": [
+        {
+            "type": "get",
+            "route": "*/pages/*/*.js",
+            "requestName": "pagesAction",
+            "url": "../routes/common/pagesAction"
+        },
+        {
+            "type": "get",
+            "route": "/lessAction",
+            "requestName": "lessAction",
+            "url": "../routes/common/lessAction"
+        },
+        {
+            "type": "get",
+            "route": "/checkCacheAction",
+            "requestName": "checkCacheAction",
+            "url": "../routes/common/checkCacheAction"
+        },
+        {
+            "type": "get",
+            "route": "*/images/*",
+            "requestName": "imageAction",
+            "url": "../routes/common/imageAction"
+        },
+        {
+            "type": "get",
+            "route": "/index",
+            "requestName": "index",
+            "url": "../routes/index/index"
+        }
+    ]
+}

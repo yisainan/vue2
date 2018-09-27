@@ -1,0 +1,19 @@
+        <script class="lazy-load" data-src="/lib/promise.min.js"></script>
+        <script class="lazy-load" data-src="/lib/rx.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/lib/vue.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/common/cookies.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/common/api.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/common/EventEmitter.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/common/reactive.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/common/common.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/common/automan.js?timstamp=<%=timestamp%>"></script>
+        <script class="lazy-load" data-src="/pages/<%=pagePath%>/<%=pageName%>.js?timstamp=<%=timestamp%>"></script>
+        <script src="/common/md5.js"></script>
+        <script src="/common/localCache.js"></script>
+        <script src="/lib/jquery.js"></script>
+        <script src="/common/loadjs.js?timstamp=<%=timestamp%>"></script>
+        <script>
+            loadJs.load();//缓存所有显示引入的js文件到本地
+        </script>
+    </body>
+</html>

@@ -1,0 +1,3 @@
+{
+     "gallery":"pages/components/common"
+}
