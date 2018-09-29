@@ -1,3 +1,4 @@
 {
-     "gallery":"pages/components/common"
+     "gallery":"pages/components/common",
+     "jiaofei": "pages/components/jiaofei"
 }

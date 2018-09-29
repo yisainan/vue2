@@ -1,7 +1,7 @@
 use([
     "pages/jiaofei/index/indexService",
-    "pages/components/jiaofei/index/banner/banner",
-    "pages/components/common/slider/slider"
+    "jiaofei/index/banner/banner",
+    "gallery/slider/slider"
 ], function() {
     function init(storage) {
         var app = new VueRoot({

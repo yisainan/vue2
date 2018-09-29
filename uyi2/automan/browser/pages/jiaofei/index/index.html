@@ -2,7 +2,8 @@
 <template>
     <div id="content-box">
         <sliderComponent></sliderComponent>
-        <bannerComponent></bannerComponent>
+        <bannerComponent :money="money"></bannerComponent>
+        {{money}}
     </div>
 </template>
 <% include footer.html %>
