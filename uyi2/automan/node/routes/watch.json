@@ -29,6 +29,30 @@
             "route": "/index",
             "requestName": "index",
             "url": "../routes/index/index"
+        },
+        {
+            "type": "get",
+            "route": "/jiaofei/index",
+            "requestName": "index",
+            "url": "../routes/jiaofei/index/index"
+        },
+        {
+            "type": "get",
+            "route": "/jiaofei/pay",
+            "requestName": "pay",
+            "url": "../routes/jiaofei/pay/pay"
+        },
+        {
+            "type": "get",
+            "route": "/user/detail",
+            "requestName": "detail",
+            "url": "../routes/user/detail/detail"
+        },
+        {
+            "type": "get",
+            "route": "/user/list",
+            "requestName": "list",
+            "url": "../routes/user/list/list"
         }
     ]
 }
