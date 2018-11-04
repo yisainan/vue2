@@ -111,6 +111,9 @@
  评价：功能不完善
 
 十六、Vue-cnodejs
-描述：侧滑登录及切换内容
+ 描述：侧滑登录及切换内容
 
+十七、iview-admin
+ 描述：iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。
+ 评价：比较好
 ```
