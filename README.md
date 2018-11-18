@@ -68,7 +68,8 @@
   评价：666
   知识点：
        1.example中有5个demo
-
+       2.mutations用来修改state的值，actions用来判断什么情况下触发mutations
+       3.getters相当于计算属性，实时计算state的值
 六、vue2-happyfri
   描述：答题项目，答完评分
   评价：简单易上手的小项目
