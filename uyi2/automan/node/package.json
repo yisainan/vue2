@@ -1,0 +1,40 @@
+{
+  "name": "automan",
+  "version": "1.0.0",
+  "description": "网站快速成型框架",
+  "main": "app.js",
+  "dependencies": {
+    "async": "^2.6.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.2",
+    "cookie": "^0.3.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "http-proxy-middleware": "^0.18.0",
+    "iconv-lite": "^0.4.23",
+    "less": "^3.0.4",
+    "md5": "^2.2.1",
+    "node-cache": "^4.2.0",
+    "node.extend": "^2.0.0",
+    "path": "^0.12.7",
+    "promise": "^8.0.1",
+    "request": "^2.86.0",
+    "rxjs": "^5.5.2",
+    "serialize-javascript": "^1.5.0",
+    "uglify-js": "^3.3.25",
+    "vue": "^2.5.16",
+    "vue-server-renderer": "^2.5.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Automan"
+  ],
+  "author": "zfbvue",
+  "license": "ISC"
+}

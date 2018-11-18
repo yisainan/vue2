@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 import routes from './router/router'
 import store from './store/'
 import {routerMode} from './config/env'
-import './config/rem'
-import FastClick from 'fastclick'
+import './config/rem' //自适应
+import FastClick from 'fastclick' //解决点击延迟
 
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function() {

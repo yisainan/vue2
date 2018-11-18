@@ -1,0 +1,58 @@
+{
+    "request": [
+        {
+            "type": "get",
+            "route": "*/pages/*/*.js",
+            "requestName": "pagesAction",
+            "url": "../routes/common/pagesAction"
+        },
+        {
+            "type": "get",
+            "route": "/lessAction",
+            "requestName": "lessAction",
+            "url": "../routes/common/lessAction"
+        },
+        {
+            "type": "get",
+            "route": "/checkCacheAction",
+            "requestName": "checkCacheAction",
+            "url": "../routes/common/checkCacheAction"
+        },
+        {
+            "type": "get",
+            "route": "*/images/*",
+            "requestName": "imageAction",
+            "url": "../routes/common/imageAction"
+        },
+        {
+            "type": "get",
+            "route": "/index",
+            "requestName": "index",
+            "url": "../routes/index/index"
+        },
+        {
+            "type": "get",
+            "route": "/jiaofei/index",
+            "requestName": "index",
+            "url": "../routes/jiaofei/index/index"
+        },
+        {
+            "type": "get",
+            "route": "/jiaofei/pay",
+            "requestName": "pay",
+            "url": "../routes/jiaofei/pay/pay"
+        },
+        {
+            "type": "get",
+            "route": "/user/detail",
+            "requestName": "detail",
+            "url": "../routes/user/detail/detail"
+        },
+        {
+            "type": "get",
+            "route": "/user/list",
+            "requestName": "list",
+            "url": "../routes/user/list/list"
+        }
+    ]
+}

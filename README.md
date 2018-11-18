@@ -1,28 +1,21 @@
-## 点个star 收藏一下岂不是更好😆！
-
-### 强烈推荐：史上最全Vue相关开源项目库汇总
-  https://github.com/opendigg/awesome-github-vue
+### 强烈推荐：[史上最全Vue相关开源项目库汇总](https://github.com/opendigg/awesome-github-vue)
+  
 
   #### BaseCode
   > vue基础代码--个人学习代码
 
 
 * 项目地址
-  * vue-music : https://github.com/qiilee/vue/tree/master/vue-music
-  * vue2-elm : https://github.com/bailicangdu/vue2-elm
-  * vue-sell : https://github.com/ustbhuangyi/vue-sell
-  * vue-awesome-swiper : https://github.com/surmon-china/vue-awesome-swiper
-  * vuex : https://github.com/vuejs/vuex
-  * vue2-happyfri : https://github.com/bailicangdu/vue2-happyfri
-  * vue2.0+node.js+MongoDB : https://github.com/qiilee/vue/tree/master/vue2.0%2Bnode.js%2BMongoDB%E5%85%A8%E6%A0%88%E6%89%93%E9%80%A0%E5%95%86%E5%9F%8E
-  * vue2.0-taopiaopiao :  https://github.com/canfoo/vue2.0-taopiaopiao
-  * vue2-demo : https://github.com/lzxb/vue2-demo
-  * vue2.x-douban : https://github.com/superman66/vue2.x-douban
-  * vuejs2-learn : https://github.com/bhnddowinf/vuejs2-learn
-  * NeteaseCloudWebApp : https://github.com/javaSwing/NeteaseCloudWebApp
-  * progress : https://github.com/vue-multiple/progress
-  * vue-slider : https://github.com/Chris-wei/vue-slider
-  * vue-video-player : https://github.com/surmon-china/vue-video-player
+  * [vue-music](https://github.com/qiilee/vue/tree/master/vue-music)
+  * [vue-sell](https://github.com/ustbhuangyi/vue-sell)
+  * [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper)
+  * [vue2.0+node.js+MongoDB](https://github.com/qiilee/vue/tree/master/vue2.0%2Bnode.js%2BMongoDB%E5%85%A8%E6%A0%88%E6%89%93%E9%80%A0%E5%95%86%E5%9F%8E)
+  * [vue2-demo](https://github.com/lzxb/vue2-demo)
+  * [vuejs2-learn](https://github.com/bhnddowinf/vuejs2-learn)
+  * [NeteaseCloudWebApp](https://github.com/javaSwing/NeteaseCloudWebApp)
+  * [progress](https://github.com/vue-multiple/progress)
+  * [vue-slider](https://github.com/Chris-wei/vue-slider)
+  * [vue-video-player](https://github.com/surmon-china/vue-video-player)
 
 * 项目教程
   * vue-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
@@ -42,6 +35,8 @@
        5.mixins减少代码冗余
        6.vuex的使用
        7.路由懒加载（减小app.js体积）
+
+       
 
 二、vue2-elm
   描述：饿了么完整版webapp
@@ -65,7 +60,7 @@
 
 五、vuex
   描述：官方代码
-  评价：666
+  评价：一切皆以官方为准
   知识点：
        1.example中有5个demo
        2.mutations用来修改state的值，actions用来判断什么情况下触发mutations
@@ -74,19 +69,17 @@
   描述：答题项目，答完评分
   评价：简单易上手的小项目
   知识点：
-       1.
 
 七、vue2.0+node.js+MongoDB全栈打造商城
   描述：商城PC版
   评价：难度较高
   知识点：
-       1.
+       
 
 八、vue2.0-taopiaopiao
   描述：淘票票的全栈demo
   评价：运行有问题
   知识点：
-       1.
 
 九、vue2-demo
   描述：从零构建vue2 + vue-router + vuex 开发环境到入门，实现基本的登录退出功能
@@ -103,8 +96,6 @@
 十一、vuejs2-learn
   描述：vuejs2 官网讲解
   评价：
-  知识点：
-       1.
 
 十二、progress
  描述：较好的进度组件
@@ -122,9 +113,10 @@
  描述：仿网易云音乐
  评价：功能不完善
 
-Vue-cnodejs
-描述：侧滑登录及切换内容
+十六、Vue-cnodejs
+ 描述：侧滑登录及切换内容
 
-
-
+十七、iview-admin
+ 描述：iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。
+ 评价：比较好
 ```

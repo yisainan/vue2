@@ -1,0 +1,17 @@
+{
+    "dev": {
+       "host": "dev.soeasypay.cn",
+       "port": "8001",
+       "protocal": "http"
+    },
+    "release": {
+      "host": "release.soeasypay.cn",
+      "port": "80",
+      "protocal": "https"
+    },
+    "pre": {
+      "host": "pre.soeasypay.cn",
+      "port": "80",
+      "protocal": "https"
+    }
+}

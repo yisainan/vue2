@@ -1,3 +1,8 @@
+自己过一遍：
+login组件/引入弹框 头部等公共组件 切换选择登录方式
+
+
+
 # 前言
 
 [README in English](README-en.md)
