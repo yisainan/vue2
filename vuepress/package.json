@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/@vuepress/*",
+    "packages/vuepress",
+    "packages/docs",
+    "packages/blog"
+  ],
+  "description": "Minimalistic doc generator with Vue component based layout system",
+  "scripts": {
+    "boot": "node scripts/bootstrap.js",
+    "dev": "yarn workspace docs dev",
+    "build": "yarn workspace docs build",
+    "dev:blog": "yarn workspace blog dev",
+    "build:blog": "yarn workspace blog build",
+    "lint": "eslint --fix packages/**/*.js packages/**/*.vue packages/**/bin/*",
+    "release": "yarn --pure-lockfile && node scripts/release.js",
+    "changelog": "node scripts/genChangelog.js run",
+    "test": "node scripts/test.js"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^1.3.22",
+    "eslint": "^4.19.1",
+    "eslint-plugin-jest": "^21.15.1",
+    "eslint-plugin-vue-libs": "^3.0.0",
+    "lerna": "^2.11.0",
+    "lint-staged": "^7.0.4",
+    "minimist": "^1.2.0",
+    "yorkie": "^1.0.3",
+    "inquirer": "^6.2.0",
+    "@vue/conventional-changelog": "^0.1.1"
+  }
+}

@@ -1,0 +1,18 @@
+# Basic
+*.log
+.temp
+vuepress
+art
+docs
+.eslintrc.js
+yarn.lock
+TODOs.md
+.github
+.idea
+
+# CI related
+scripts
+
+# Test related
+test
+.babelrc
