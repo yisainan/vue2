@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+
+        <testsuite name="unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+
+        <testsuite name="integration">
+            <directory suffix="Test.php">./tests/Integration</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app/</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_URL" value="http://localhost/"/>
+        <env name="APP_KEY" value="16efa6c23c2e8c705826b0e66778fbe7"/>
+        <env name="JWT_SECRET" value="ki8jSvMf5wFrlSRBAWcGbmAzBUJfc8p8"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="LASTFM_API_KEY" value="foo"/>
+        <env name="LASTFM_API_SECRET" value="bar"/>
+        <env name="YOUTUBE_API_KEY" value="foo"/>
+        <env name="ADMIN_EMAIL" value="koel@example.com"/>
+        <env name="ADMIN_NAME" value="Koel"/>
+        <env name="ADMIN_PASSWORD" value="SoSecureK0el"/>
+        <env name="BROADCAST_DRIVER" value="log"/>
+        <env name="CACHE_MEDIA" value="true"/>
+    </php>
+</phpunit>

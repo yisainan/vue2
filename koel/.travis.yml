@@ -1,0 +1,38 @@
+language: php
+
+php:
+  - 7.1
+  - 7.2
+
+env:
+  APP_ENV: testing
+  CACHE_DRIVER: array
+  SESSION_DRIVER: array
+  QUEUE_DRIVER: sync
+  DB_CONNECTION: sqlite
+  APP_KEY: 16efa6c23c2e8c705826b0e66778fbe7
+  JWT_SECRET: ki8jSvMf5wFrlSRBAWcGbmAzBUJfc8p8
+  ADMIN_EMAIL: koel@example.com
+  ADMIN_NAME: Koel
+  ADMIN_PASSWORD: SoSecureK0el
+  LASTFM_API_KEY: foo
+  LASTFM_API_SECRET: bar
+  BROADCAST_DRIVER: log
+
+branches:
+  - master
+
+install:
+  - composer self-update
+  - composer install --prefer-dist --no-interaction
+
+script:
+  - composer coverage
+
+addons:
+  code_climate:
+    repo_token: e74dc85a4eeb025a067bde238175f44d9f6a9e544278c4c096a46b8467c5fb9f
+
+after_success:
+  - vendor/bin/test-reporter
+  - bash <(curl -s https://codecov.io/bash)
