@@ -16,6 +16,7 @@
   * [progress](https://github.com/vue-multiple/progress)
   * [vue-slider](https://github.com/Chris-wei/vue-slider)
   * [vue-video-player](https://github.com/surmon-china/vue-video-player)
+  * 可根据项目名称在github中查找
 
 * 项目教程
   * vue-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
@@ -116,5 +117,11 @@
 
 十七、iview-admin
  描述：iView admin是基于Vue.js，搭配使用iView UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。
- 评价：比较好
+ 评价：比较好的iview后台管理项目，可以借鉴：权限切换、列表过滤、图片上传、图片拖动、数字渐变、表格导出数据等
+
+十八、doubanMovie-SSR
+ 描述：Vue豆瓣电影服务端渲染 
+ 评价：适合初学者学习服务端渲染
+
+
 ```
