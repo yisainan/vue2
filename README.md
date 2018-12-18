@@ -23,11 +23,11 @@
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
   * 链接过期请联系QQ：892762216
 
-* 项目说明
+* 项目说明（大家试着写下总结，收获会更多，欢迎提供 pull request）
 ```
-一、vue-music
+一、chicken-music
   描述：火鸡音乐项目
-  评价：值得vue初级学者进阶学习的项目
+  评价：值得vue高级学者进阶学习的项目（非开源，难度较高）
   知识点：
        1.Charles抓包使用方法（iphone和安卓进行代理抓包）
        2.vConsole的使用
@@ -64,15 +64,17 @@
        1.example中有5个demo
        2.mutations用来修改state的值，actions用来判断什么情况下触发mutations
        3.getters相当于计算属性，实时计算state的值
+
 六、vue2-happyfri
   描述：答题项目，答完评分
   评价：简单易上手的小项目
-  知识点：
+  知识点：vuex的使用
 
 七、vue2.0+node.js+MongoDB全栈打造商城
   描述：商城PC版
   评价：难度较高
   知识点：
+        1.MongoDB的使用，前端开发人员一般很少接触
        
 
 八、vue2.0-taopiaopiao
