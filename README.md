@@ -15,7 +15,7 @@
   * [progress](https://github.com/vue-multiple/progress)
   * [vue-slider](https://github.com/Chris-wei/vue-slider)
   * [vue-video-player](https://github.com/surmon-china/vue-video-player)
-  * 可根据项目名称在github中查找
+  * 其余项目可根据项目名称在github中查找
 
 * 项目教程
   * vue-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
