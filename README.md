@@ -5,7 +5,7 @@
   > vue基础代码--个人学习代码
 
 * 项目地址
-  * [vue-music](https://github.com/qiilee/vue/tree/master/vue-music)
+  * [chicken-music](https://github.com/qiilee/vue/tree/master/chicken-music)
   * [vue-sell](https://github.com/ustbhuangyi/vue-sell)
   * [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper)
   * [vue2.0+node.js+MongoDB](https://github.com/qiilee/vue/tree/master/vue2.0%2Bnode.js%2BMongoDB%E5%85%A8%E6%A0%88%E6%89%93%E9%80%A0%E5%95%86%E5%9F%8E)
@@ -18,7 +18,7 @@
   * 其余项目可根据项目名称在github中查找
 
 * 项目教程
-  * vue-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
+  * chicken-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
   * vue-sell : 链接:https://pan.baidu.com/s/1ctm3kEs3DzNLnVWHBXGjcA  密码:phhz
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
   * 链接过期请联系QQ：892762216
