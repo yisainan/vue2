@@ -2,8 +2,10 @@
   
 
   #### BaseCode
-  > vue基础代码--个人学习代码
+  > 个人学习代码
 
+  #### 推荐学习方法
+  > 本地建一个存放同类开源项目的文件夹，方便自己参考和整体提交到远程，以下为项目总结，欢迎通过 issue 的方式提问 或提供 pull request
 
 | 名称 | 简介 | 知识点 |
 | ---- | ---- | ---- |
@@ -30,4 +32,3 @@
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
   * 链接过期请联系QQ：892762216
 
-* 项目说明（大家试着写下总结，收获会更多，欢迎提供 pull request）
