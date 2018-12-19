@@ -1,0 +1,30 @@
+{
+  "name": "vue-analysis",
+  "version": "1.0.0",
+  "description": "analysis vue.js deeply",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "sh deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ustbhuangyi/vue-analysis.git"
+  },
+  "keywords": [
+    "vue",
+    "analysis"
+  ],
+  "author": "ustbuhuangyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ustbhuangyi/vue-analysis/issues"
+  },
+  "homepage": "https://github.com/ustbhuangyi/vue-analysis#readme",
+  "devDependencies": {
+    "vuepress": "^0.10.0"
+  }
+}
