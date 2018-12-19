@@ -15,7 +15,7 @@
 ![vue-sell](https://static.galileo.xiaojukeji.com/static/tms/shield/Vue.js_music_xmind.png)
 
 ## 适合人群
-适合有一定 Vue.js 和前端基础知识并且想在 Vue.js 方向进阶同学。
+一年以上工作经验的前端从业人员
 
 ## 源码结构
 
