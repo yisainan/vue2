@@ -24,6 +24,7 @@
 | [Vue-cnodejs](https://github.com/shinygang/Vue-cnodejs) | 基于vue.js重写Cnodejs.org社区的webapp |   |
 | [NeteaseCloudWebApp](https://github.com/javaSwing/NeteaseCloudWebApp) | 仿网易云音乐 | 功能不完善 |
 | [vue-slider](https://github.com/Chris-wei/vue-slider) | 滑动删除 | 已被mint ui组件代替 |
+| [github-emoji](https://github.com/Wscats/github-emoji) | 基于Vue编写的Github表情包大全 | 可以直接复制项目README中你喜欢的表情，粘贴到github项目中你所需要的文本或者标题里面 |
 
 #### 项目教程
   * chicken-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
