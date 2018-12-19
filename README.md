@@ -9,9 +9,9 @@
 
 | 名称 | 简介 | 知识点 |
 | ---- | ---- | ---- |
-| [chicken-music](https://github.com/qiilee/vue/tree/master/chicken-music) | 值得vue高级学者进阶学习的项目（非开源，难度较高） |  1.Charles抓包使用方法（iphone和安卓进行代理抓包）<br/>2.vConsole的使用<br/>3.搜索节流<br/>4.抓取QQ音乐接口数据<br/>5.mixins减少代码冗余<br/>6.vuex的使用<br/>7.路由懒加载（减小app.js体积） |
-| [vue2-elm](https://github.com/bailicangdu/vue2-elm) | 饿了么完整版webapp | 1.定位<br/>2.搜索<br/>3.筛选 |
-| [vue-sell](https://github.com/ustbhuangyi/vue-sell) | 饿了么轻量版webapp | 1.better-scroll<br/>2.node prod.server.js 开启本地服务<br/>3.config=>index.js=>productionSourceMap属性（本地调试）  上线时应设为false |
+| [chicken-music](https://github.com/qiilee/vue/tree/master/chicken-music) | Vue.js 高级实战——音乐 App 课程源码，[课程地址](http://coding.imooc.com/class/107.html)（个人网盘教程见底部） |  1.Charles抓包使用方法（iphone和安卓进行代理抓包）<br/>2.vConsole的使用<br/>3.搜索节流<br/>4.抓取QQ音乐接口数据<br/>5.mixins减少代码冗余<br/>6.vuex的使用<br/>7.路由懒加载（减小app.js体积） |
+| [vue2-elm](https://github.com/bailicangdu/vue2-elm) | 和慕课网视频的那个饿了么没有任何关系，慕课网的项目只有一个页面，此为饿了么完整版webapp | 1.定位<br/>2.搜索<br/>3.筛选 |
+| [vue-sell](https://github.com/ustbhuangyi/vue-sell) | 慕课网视频的那个饿了么 | 1.better-scroll<br/>2.node prod.server.js 开启本地服务<br/>3.config=>index.js=>productionSourceMap属性（本地调试）  上线时应设为false |
 | [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper) | 轮播组件（可查看example） |   |
 | [vuex](https://github.com/vuejs/vuex) | 官方vuex代码 |  1.example中有5个demo<br/>2.mutations用来修改state的值，actions用来判断什么情况下触发mutations<br/>3.getters相当于计算属性，实时计算state的值  |
 | [vue2-happyfri](https://github.com/bailicangdu/vue2-happyfri) | 答题项目，答完评分 | vuex的使用 |
@@ -25,8 +25,7 @@
 | [NeteaseCloudWebApp](https://github.com/javaSwing/NeteaseCloudWebApp) | 仿网易云音乐 | 功能不完善 |
 | [vue-slider](https://github.com/Chris-wei/vue-slider) | 滑动删除 | 已被mint ui组件代替 |
 
-
-* 项目教程
+#### 项目教程
   * chicken-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
   * vue-sell : 链接:https://pan.baidu.com/s/1ctm3kEs3DzNLnVWHBXGjcA  密码:phhz
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
