@@ -1,7 +1,7 @@
 ### 👊 强烈推荐：[史上最全Vue相关开源项目库汇总](https://github.com/opendigg/awesome-github-vue)
-  
 
-  #### BaseCode
+
+  #### myCode
   > 个人学习代码
 
   #### 推荐学习方法
@@ -32,4 +32,3 @@
   * vue-sell : 链接:https://pan.baidu.com/s/1ctm3kEs3DzNLnVWHBXGjcA  密码:phhz
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
   * 链接过期请联系QQ：892762216
-
