@@ -1,14 +1,11 @@
 ### 👊 强烈推荐：[史上最全Vue相关开源项目库汇总](https://github.com/opendigg/awesome-github-vue)
 
-
-  #### myCode
-  > 个人学习代码
-
   #### 推荐学习方法
   > 本地建一个存放同类开源项目的文件夹，方便自己参考和整体提交到远程，以下为项目总结，欢迎通过 issue 的方式提问 或提供 pull request
 
 | 名称 | 简介 | 知识点 |
 | ---- | ---- | ---- |
+| myCode | 个人学习代码 | 都是一些vue基础代码  |
 | [chicken-music](https://github.com/qiilee/vue/tree/master/chicken-music) | Vue.js 高级实战——音乐 App 课程源码，[课程地址](http://coding.imooc.com/class/107.html)（个人网盘教程见底部） |  1.Charles抓包使用方法（iphone和安卓进行代理抓包）<br/>2.vConsole的使用<br/>3.搜索节流<br/>4.抓取QQ音乐接口数据<br/>5.mixins减少代码冗余<br/>6.vuex的使用<br/>7.路由懒加载（减小app.js体积） |
 | [vue2-elm](https://github.com/bailicangdu/vue2-elm) | 和慕课网视频的那个饿了么没有任何关系，慕课网的项目只有一个页面，此为饿了么完整版webapp | 1.定位<br/>2.搜索<br/>3.筛选 |
 | [vue-sell](https://github.com/ustbhuangyi/vue-sell) | 慕课网视频的那个饿了么 | 1.better-scroll<br/>2.node prod.server.js 开启本地服务<br/>3.config=>index.js=>productionSourceMap属性（本地调试）  上线时应设为false |
