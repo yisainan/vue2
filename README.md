@@ -12,9 +12,9 @@
 | [chicken-music](https://github.com/qiilee/vue/tree/master/chicken-music) | Vue.js 高级实战——音乐 App 课程源码，[课程地址](http://coding.imooc.com/class/107.html)（个人网盘教程见底部） |  1.Charles抓包使用方法（iphone和安卓进行代理抓包）<br/>2.vConsole的使用<br/>3.搜索节流<br/>4.抓取QQ音乐接口数据<br/>5.mixins减少代码冗余<br/>6.vuex的使用<br/>7.路由懒加载（减小app.js体积） |
 | [vue2-elm](https://github.com/bailicangdu/vue2-elm) | 和慕课网视频的那个饿了么没有任何关系，慕课网的项目只有一个页面，此为饿了么完整版webapp | 1.定位<br/>2.搜索<br/>3.筛选 |
 | [vue-sell](https://github.com/ustbhuangyi/vue-sell) | 慕课网视频的那个饿了么 | 1.better-scroll<br/>2.node prod.server.js 开启本地服务<br/>3.config=>index.js=>productionSourceMap属性（本地调试）  上线时应设为false |
-| [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper) | 轮播组件（可查看example） |   |
+| [vue-awesome-swiper](https://github.com/surmon-china/vue-awesome-swiper) | 轮播组件（可查看example） | 安装不同版本的vue-awesome-swiper对应不同的swiper  |
 | [vuex](https://github.com/vuejs/vuex) | 官方vuex代码 |  1.example中有5个demo<br/>2.mutations用来修改state的值，actions用来判断什么情况下触发mutations<br/>3.getters相当于计算属性，实时计算state的值  |
-| [vue2-happyfri](https://github.com/bailicangdu/vue2-happyfri) | 答题项目，答完评分 | vuex的使用 |
+| [vue2-happyfri](https://github.com/bailicangdu/vue2-happyfri) | 答题项目，答完评分 | vuex的入门使用 |
 | [vue2.0+node.js+MongoDB](https://github.com/qiilee/vue/tree/master/vue2.0%2Bnode.js%2BMongoDB%E5%85%A8%E6%A0%88%E6%89%93%E9%80%A0%E5%95%86%E5%9F%8E) | 商城PC版 | 1.MongoDB的使用，前端开发人员一般很少接触  |
 | [progress](https://github.com/vue-multiple/progress) | 较好的进度组件 |   |
 | [vue2-demo](https://github.com/lzxb/vue2-demo) | 从零构建vue2 + vue-router + vuex 开发环境到入门，实现基本的登录退出功能 |   |
