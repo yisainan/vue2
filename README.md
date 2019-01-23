@@ -25,6 +25,7 @@
 | [vue-slider](https://github.com/Chris-wei/vue-slider) | 滑动删除 | 已被mint ui组件代替 |
 | [github-emoji](https://github.com/Wscats/github-emoji) | 基于Vue编写的Github表情包大全 | 可以直接复制项目README中你喜欢的表情，粘贴到github项目中你所需要的文本或者标题里面 |
 | [vue-analysis](https://github.com/ustbhuangyi/vue-analysis) | Vue.js 源码分析 | Vue.js 技术揭秘 |
+| [uyi2](http://www.uyi2.com) | web前端学习资料库 | automan项目亲测失败 |
 
 #### 项目教程
   * chicken-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
