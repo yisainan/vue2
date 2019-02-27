@@ -1,0 +1,33 @@
+{
+  "name": "test-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "local": "cross-env NODE_ENV=LOCAL nodemon ./bin/www",
+    "pm2": "cd $PWD;cross-env NODE_ENV=PRODUCTION pm2 start pm2.json"
+  },
+  "dependencies": {
+    "colors": "^1.3.1",
+    "cookie-parser": "~1.4.3",
+    "cross-env": "^5.2.0",
+    "debug": "~2.6.9",
+    "dotenv": "^6.0.0",
+    "express": "~4.16.0",
+    "formidable": "^1.2.1",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "mime": "^2.3.1",
+    "morgan": "~1.9.0",
+    "multer": "^1.3.1",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.1",
+    "node-snowflake": "0.0.1",
+    "pm2": "^3.0.3",
+    "redis": "^2.8.0",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6"
+  }
+}

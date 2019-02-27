@@ -1,0 +1,13 @@
+{
+    "apps": [
+        {
+            "name": "fss-server",
+            "script": "./bin/www",
+            "instances": 2,
+            "instance_var": "INSTANCE_ID",
+            "exec_mode": "cluster"
+        },{
+            "node-args": "--max-old-space-size=4096"
+        }
+    ]
+}
