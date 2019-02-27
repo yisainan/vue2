@@ -1,0 +1,5 @@
+import Mock from 'mockjs'
+
+// 接口模拟
+
+export default Mock
