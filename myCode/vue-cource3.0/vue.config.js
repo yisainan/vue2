@@ -2,7 +2,7 @@ const path = require('path')
 
 const resolve = dir => path.join(__dirname, dir)
 
-import BASE_URL from process.env.NODE_ENV === 'procution' ? '/' : '/'
+const BASE_URL = process.env.NODE_ENV === 'production' ? '/' : '/'
 
 module.exports = {
   lintOnSave: false, // 取消每次保存时的eslint语法检测
