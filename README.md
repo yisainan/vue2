@@ -1,4 +1,5 @@
-### 👊 强烈推荐：[史上最全Vue相关开源项目库汇总](https://github.com/opendigg/awesome-github-vue)
+### 👊 强烈推荐：[史上最全Vue相关开源项目库汇总-中文版](https://github.com/opendigg/awesome-github-vue) 
+[英文版](https://github.com/vuejs/awesome-vue)
 
 
 
