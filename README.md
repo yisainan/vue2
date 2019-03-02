@@ -32,3 +32,5 @@
   * vue-sell : 链接:https://pan.baidu.com/s/1ctm3kEs3DzNLnVWHBXGjcA  密码:phhz
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
   * 链接过期请联系QQ：892762216
+  
+(2.33GB-2019/03-02)
