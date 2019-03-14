@@ -1,0 +1,80 @@
+{
+  "name": "vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve --mode stage",
+    "build": "vue-cli-service build --modern"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "better-scroll": "^1.13.4",
+    "cropperjs": "^1.4.3",
+    "cssnano": "^4.1.8",
+    "fastclick": "^1.0.6",
+    "good-storage": "^1.1.0",
+    "nprogress": "^0.2.0",
+    "photoswipe": "^4.1.3",
+    "postcss-aspect-ratio-mini": "^1.0.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-px-to-viewport": "^0.0.3",
+    "postcss-url": "^8.0.0",
+    "postcss-viewport-units": "^0.1.6",
+    "postcss-write-svg": "^3.0.1",
+    "vant": "^1.4.5",
+    "vue": "^2.5.21",
+    "vue-awesome-swiper": "^3.1.3",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-service": "^3.3.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "cssnano-preset-advanced": "^4.0.6",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vconsole": "^3.3.0",
+    "vue-template-compiler": "^2.5.21",
+    "webpack-bundle-analyzer": "^3.0.3"
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-import": {},
+      "postcss-url": {},
+      "postcss-aspect-ratio-mini": {},
+      "postcss-write-svg": {
+        "utf8": false
+      },
+      "postcss-cssnext": {},
+      "postcss-px-to-viewport": {
+        "viewportWidth": 375,
+        "viewportHeight": 667,
+        "unitPrecision": 3,
+        "viewportUnit": "vw",
+        "selectorBlackList": [
+          ".ignore",
+          ".hairlines"
+        ],
+        "minPixelValue": 1,
+        "mediaQuery": false
+      },
+      "cssnano": {
+        "cssnano-preset-advanced": {
+          "preset": "advanced",
+          "autoprefixer": false,
+          "postcss-zindex": false,
+          "zindex": false
+        }
+      }
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
