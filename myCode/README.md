@@ -10,6 +10,10 @@
         * 3. 把router.js移动到router文件夹，新建index.js
         * 4. store.js移动到store文件夹，改为index.js，新建state.js、mucations.js、actions.js
         * 5. cnpm i mockjs -D 安装mockjs
+        * 6. import vuex from 'vuex' 
+             const mapState = vuex. mapState 两句解构赋值写法为：import { mapState } from 'vuex'
+        * 7. 状态管理中命名空间的使用  namespaced: true
+        * 8.  
 
 
 
