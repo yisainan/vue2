@@ -27,7 +27,7 @@
 | [github-emoji](https://github.com/Wscats/github-emoji) | 基于Vue编写的Github表情包大全 | 可以直接复制项目README中你喜欢的表情，粘贴到github项目中你所需要的文本或者标题里面 |
 | [vue-analysis](https://github.com/ustbhuangyi/vue-analysis) | Vue.js 源码分析 | Vue.js 技术揭秘 |
 | [uyi2](http://www.uyi2.com) | web前端学习资料库 | automan项目亲测失败 |
-| [vue-cource](https://github.com/lison16/vue-cource) | [Vue技术栈开发实战(26课时)](https://segmentfault.com/ls/1650000016221751?utm_source=recommend_web-live-new) | 作者：Lison(iview核心开发者，iview-admin作者)[vue-cource](https://github.com/Fork-GitHub/vue-cource)为本人fork仓库，可根据Tags区分知识点：1.创建项目 2.vue-router1 3.vue-router2  |
+| [vue-cource](https://github.com/lison16/vue-cource) | [Vue技术栈开发实战(26课时)](https://segmentfault.com/ls/1650000016221751?utm_source=recommend_web-live-new) | 作者：Lison(iview核心开发者，iview-admin作者)[vue-cource](https://github.com/Fork-GitHub/vue-cource)为本人fork仓库，可根据Tags区分知识点：<br/>1.创建项目<br/> 2.vue-router1<br/> 3.vue-router2<br/> ...... <br/>当然也可以在master分支查看对应commit |
 | [mint-ui](https://github.com/wuhuisiyue/mint-ui) | 本示例参考mint-ui官网  | 使用mint-ui时 建议运行此项目参考示例代码 |
 #### 项目教程
   * chicken-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
