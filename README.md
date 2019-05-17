@@ -27,7 +27,7 @@
 | [github-emoji](https://github.com/Wscats/github-emoji) | 基于Vue编写的Github表情包大全 | 可以直接复制项目README中你喜欢的表情，粘贴到github项目中你所需要的文本或者标题里面 |
 | [vue-analysis](https://github.com/ustbhuangyi/vue-analysis) | Vue.js 源码分析 | Vue.js 技术揭秘 |
 | [uyi2](http://www.uyi2.com) | web前端学习资料库 | automan项目亲测失败 |
-| [vue-cource](https://github.com/lison16/vue-cource) | [Vue技术栈开发实战(26课时)](https://segmentfault.com/ls/1650000016221751?utm_source=recommend_web-live-new) | 作者：Lison(iview核心开发者，iview-admin作者),本课程通过对100多位开发者调查反馈，用心整理了课程大纲，确保每一节课都会在清晰讲解主要主干知识的同时，穿插Vue基础和ES6/7/8等知识，同时还会介绍一些本人在多个项目开发中总结的经验。[vue-cource](https://github.com/lison16/vue-cource)已根据Tags区分知识点 |
+| [vue-cource](https://github.com/lison16/vue-cource) | [Vue技术栈开发实战(26课时)](https://segmentfault.com/ls/1650000016221751?utm_source=recommend_web-live-new) | 作者：Lison(iview核心开发者，iview-admin作者),本课程通过对100多位开发者调查反馈，用心整理了课程大纲，确保每一节课都会在清晰讲解主要主干知识的同时，穿插Vue基础和ES6/7/8等知识，同时还会介绍一些本人在多个项目开发中总结的经验。[vue-cource](https://github.com/Fork-GitHub/vue-cource)为fork仓库，可根据Tags区分知识点 |
 | [mint-ui](https://github.com/wuhuisiyue/mint-ui) | 本示例参考mint-ui官网  | 使用mint-ui时 建议运行此项目参考示例代码 |
 #### 项目教程
   * chicken-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
