@@ -33,4 +33,4 @@
   * chicken-music : 链接:https://pan.baidu.com/s/1K6llQUzzadIRQfvHStQsZA  密码:r08l
   * vue-sell : 链接:https://pan.baidu.com/s/1ctm3kEs3DzNLnVWHBXGjcA  密码:phhz
   * vue2.0+node.js+MongoDB : 链接:https://pan.baidu.com/s/1y0rl7uUzwUQjRqR0AsaGsg  密码:63eg
-  * 链接过期请联系QQ：892762216
+  * 链接过期请[**加群**](https://github.com/yisainan/web-interview)获取
