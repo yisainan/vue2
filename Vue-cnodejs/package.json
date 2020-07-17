@@ -53,7 +53,7 @@
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
     "json-loader": "^0.5.4",
-    "lodash": "^4.16.6",
+    "lodash": "^4.17.19",
     "markdown": "^0.5.0",
     "node-sass": "^4.5.3",
     "opn": "^4.0.2",
