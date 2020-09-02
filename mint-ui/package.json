@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.0.0-rc.4",
+    "bootstrap-vue": "^2.0.0-rc.12",
     "jquery": "^3.3.1",
     "mint-ui": "^2.2.13",
     "vue": "^2.5.2",
