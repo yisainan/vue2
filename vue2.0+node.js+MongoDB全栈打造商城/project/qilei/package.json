@@ -11,7 +11,7 @@
     "es6": "babel demo/user.js -o demo/user-com.js"
   },
   "dependencies": {
-    "axios": "^0.16.1",
+    "axios": "^0.21.1",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
