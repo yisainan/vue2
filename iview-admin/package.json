@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "clipboard": "^2.0.0",
-    "codemirror": "^5.38.0",
+    "codemirror": "^5.58.2",
     "countup": "^1.8.2",
     "cropperjs": "^1.2.2",
     "dayjs": "^1.7.7",
