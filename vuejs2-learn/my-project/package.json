@@ -39,7 +39,7 @@
     "json-loader": "^0.5.4",
     "opn": "^4.0.2",
     "ora": "^0.3.0",
-    "shelljs": "^0.7.4",
+    "shelljs": "^0.8.5",
     "url-loader": "^0.5.7",
     "vue-loader": "^9.4.0",
     "vue-style-loader": "^1.0.0",
