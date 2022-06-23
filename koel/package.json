@@ -69,7 +69,7 @@
     "expect": "^21.2.1",
     "factoria": "^1.0.1",
     "font-awesome": "^4.7.0",
-    "jsdom": "^11.5.1",
+    "jsdom": "^16.5.0",
     "jsdom-global": "^3.0.2",
     "laravel-mix": "^0.8.0",
     "mocha": "^2.3.4",
