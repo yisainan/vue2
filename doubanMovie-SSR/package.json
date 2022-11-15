@@ -37,10 +37,10 @@
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "buble": "^0.15.2",
-    "buble-loader": "^0.4.1",
+    "buble-loader": "^0.5.1",
     "css-loader": "^0.27.3",
     "file-loader": "^0.10.1",
-    "html-webpack-plugin": "^2.28.0",
+    "html-webpack-plugin": "^5.5.0",
     "rimraf": "^2.6.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
@@ -49,7 +49,7 @@
     "vue-loader": "^11.1.4",
     "vue-ssr-webpack-plugin": "^1.0.2",
     "vue-template-compiler": "^2.2.4",
-    "webpack": "^2.2.1",
+    "webpack": "^5.75.0",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-hot-middleware": "^2.17.1"
   }
