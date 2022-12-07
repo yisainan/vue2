@@ -19,7 +19,7 @@
     "cross-env": "^3.2.4",
     "element-ui": "^1.2.5",
     "es6-promise": "^4.1.0",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "firebase": "^3.7.2",
     "http-proxy-middleware": "^0.17.4",
     "https": "^1.0.0",
