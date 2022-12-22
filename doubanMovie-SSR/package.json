@@ -20,7 +20,7 @@
     "element-ui": "^1.2.5",
     "es6-promise": "^4.1.0",
     "express": "^4.15.2",
-    "firebase": "^3.7.2",
+    "firebase": "^9.15.0",
     "http-proxy-middleware": "^0.17.4",
     "https": "^1.0.0",
     "lru-cache": "^4.0.2",
